@@ -1,0 +1,34 @@
+// Docs
+https://gist.github.com/withoutwax/46a05861aa4750384df971b641170407
+
+
+//Youtube
+
+
+# Adding Custom Fields to Devise
+# If you already have the attributes created on database (check migration and schema),
+# Add at app/controllers/application_controller.rb the following code:
+
+class ApplicationController < ActionController::Base
+    before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
+    
+
+    #This is for devise to redirect to selected page after login
+    def after_sign_in_path_for(resource)
+       homepage_path 
+    end
+
+    protected
+    def configure_permitted_parameters
+        added_attrs = [:first_name, :last_name]
+        devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+        devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+      end
+end
+
+
+# If you have any other attribute, add it at added_attrs after creating the attributes for the user. For example nickname
+added_attrs = [:first_name, :last_name, :nickname]
+
+
+

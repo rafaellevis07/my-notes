@@ -1,0 +1,28 @@
+// docs
+https://www.uday.net/add-bootstrap-5-to-an-existing-Rails-7-app
+
+
+
+
+If not install add following 2 gems to the gem file:
+
+gem 'jsbundling-rails'  # needed for bootstrap javascript
+gem 'cssbundling-rails' # Install bootstrap 5
+
+
+Then run:
+$bundle install
+
+$rails javascript:install:esbuild
+
+$rails css:install:bootstrap
+
+
+app/assets/config/manifest.js file should have only the following.
+//= link_tree ../images
+//= link_tree ../builds
+
+
+If necessary Remove code <%= javascript_importmap_tags %> from app/views/layouts/application.html.erb
+
+Run $rails s

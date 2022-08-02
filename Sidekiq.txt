@@ -1,0 +1,7 @@
+// Docs
+https://github.com/mperham/sidekiq
+https://sidekiq.org
+https://guides.rubyonrails.org/active_job_basics.html
+
+// Youtube Playlist
+https://www.youtube.com/playlist?list=PLjeHh2LSCFrWGT5uVjUuFKAcrcj5kSai1}

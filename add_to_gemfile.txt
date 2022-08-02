@@ -1,0 +1,9 @@
+gem "better_errors" 
+=> Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
+
+
+gem "binding_of_caller"
+=>Provides the Binding#of_caller method. Using binding_of_caller we can grab bindings from higher up the call stack and evaluate code in that context. Allows access to bindings arbitrarily far up the call stack, not limited to just the immediate caller. Recommended for use only in debugging situations. Do not use this in production apps.
+
+gem "letter_opener"
+=> When mail is sent from your application, Letter Opener will open a preview in the browser instead of sending.

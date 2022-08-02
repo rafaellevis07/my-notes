@@ -1,0 +1,9 @@
+Update Gemfile and .ruby-version to ruby 3.1.2
+bundle install
+
+$ brew install postgresql => Installs postgresql
+$ brew services start postgresql => # or "brew services run postgresql" to have it not restart at boot time and start services
+$ brew services stop postgresql => stops PostgreSQL
+$ rails assets:precompile => compiles the asset manifests and other files in the pipeline.
+$ rails db:create => Creates DataBase
+$ rails db:migrate => manipulates migrations and your schema

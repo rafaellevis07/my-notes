@@ -1,0 +1,104 @@
+// Docs:
+https://guides.rubyonrails.org/action_mailer_basics.html#example-action-mailer-configuration
+https://stackoverflow.com/questions/62011541/using-credentials-yml-with-rails-and-heroku
+
+//Source code:
+https://github.com/corsego/26-action-mailer/commit/04e3f81a5318382183c8fe6c7fc4abc481b15292
+
+//Youtube Video
+https://www.youtube.com/watch?v=eYhi_rbnOo8
+
+
+# This is to use a google mailers.
+# You can do at the development or production environment.
+# If development environment to test out email functionality before production, comment out: config.action_mailer.delivery_method = :letter_opener. 
+
+
+# Go to action mailer documentation, copy the code bellow and paste it on desired environment.
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:            '<username>',
+  password:             '<password>',
+  authentication:       'plain',
+  enable_starttls_auto: true,
+  open_timeout:         5,
+  read_timeout:         5 }
+
+
+# Change:
+ domain: 'gmail.com',
+ user_name:            'real.email@example.com',
+ password:             'next step explains',
+
+
+# Instead of using your own password, create an application passcode from the email you want to use.
+ - Go to your Gmail Account
+ - Manage your google account
+ - Security
+ - Turn on the 2-Step Verification and set it up (or else it won't show the next step)
+ - App passwords
+ - Confirm identity with login
+ - Select App (Mail)
+ - Select Device (Other Custom name)
+ - Generate
+ - Copy password generated. Ex. examplegenerated
+
+
+# Set config.action_mailer.raise_delivery_errors to true
+config.action_mailer.raise_delivery_errors = true
+
+
+# On development environment that's it, test it. Mailers will be working.
+# Uncomment letters_openers
+# config.action_mailer.raise_delivery_errors back to false.
+ config.action_mailer.raise_delivery_errors = true
+
+
+# On production...
+
+# username and password should be hidden and encrypted.
+# To do this we can use Rails Credentials
+
+# On bash type:
+EDITOR=vim rails credentials:edit
+
+
+# Add to the beginning of the file:
+google_smtp:
+ email: real.email@example.com
+ password: examplegenerated
+
+# Press escape (CTRL + C)
+# Save it (:wq) => Just type that without parenthesis...
+
+# Substitute:
+ user_name:            Rails.application.credentials.dig(:google_smtp, :email),
+ password:             Rails.application.credentials.dig(:google_smtp, :password),
+
+# Double check on rails console if it returns the values set on the encrypted file.
+Rails.application.credentials.dig(:google_smtp, :email) => real.email@example.com
+Rails.application.credentials.dig(:google_smtp, :password) => examplegenerated
+
+
+# Set config.action_mailer.raise_delivery_errors to true
+config.action_mailer.raise_delivery_errors = true
+
+
+# Add config.action_mailer.perform_deliveries = true to the file.
+ config.action_mailer.default_url_options = {host: "https://boiling-falls-96612.herokuapp.com/", protocol: "https"} # Change the host to your website.
+  config.action_mailer.perform_deliveries = true # Add this line
+
+
+# Push to heroku
+git push heroku main 
+
+
+# Tell Heroku what is the master key with the command:
+heroku config:set RAILS_MASTER_KEY=`cat config/master.key`
+
+
+// It works!!!!
+

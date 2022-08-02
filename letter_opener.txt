@@ -1,0 +1,21 @@
+
+// docs
+https://github.com/ryanb/letter_opener
+
+
+//This is perfect for development environment. For production we should use mailers (gmail/amazon)
+
+
+# Rails Setup
+# First add the gem to your development environment and run the bundle command to install it.
+gem "letter_opener", group: :development
+
+# Then run
+$bundle
+
+
+# Then set the delivery method in config/environments/development.rb
+
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } # This one is already on file
+config.action_mailer.delivery_method = :letter_opener
+config.action_mailer.perform_deliveries = true

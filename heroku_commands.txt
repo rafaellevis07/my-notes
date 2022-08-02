@@ -1,0 +1,9 @@
+Heroku Commands
+
+* heroku —version - Version check of Heroku
+* heroku login - Login into heroku
+* heroku create - creates a place on the Heroku servers for the new app to live   
+* git push heroku main - push the main branch up to Heroku
+* heroku run rails db:migrate - runs database migration
+* heroku apps:info - runs informations about the app
+heroku config:set RAILS_MASTER_KEY=`cat config/master.key` -  Tells heroku about the master key

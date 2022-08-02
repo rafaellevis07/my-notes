@@ -1,0 +1,34 @@
+GitHub Commands
+
+* Create a new repository -> Go to “+” >> new repository >> Name the repository specifically >> set to public  >> add README >> Create Repository button
+* On the terminal
+    * Create a Directory any name. Ex. mkdir PROJECTS
+    * Change to the directory created. cd PROJECTS
+    * Type the command: git clone [github repository link]
+Ex. git clone https://github.com/rafaellevis07/Study-Jun-2022-Blog.git
+    * Change to the directory create inside of that folder
+    * Check status of directory. git status
+    * Start you project.
+    * Add new or changed files in your working directory to the Git staging area. git add . (Or git add -A)
+    * Check status again.
+    * Describe what was created or changes. git commit -m “Adding user login”
+    * You can see a log of the commit messages. git log 
+    * git reset --hard HEAD~1. Delete last commit. (Without number 1 deletes all recent changes)
+    * Upload the commits to GitHub. git push
+    * Check status again and check your GitHub to see if the files were uploaded.
+
+
+
+* Dealing with a branch:
+    * git checkout -b modify-README - Switched to a new branch 'modify-README'
+    * git branch - main* modify-README
+    * git commit -a -m "Improve the README file" - commit all modifications and leaves a message
+    * git checkout main - Switched to branch 'main'
+    * git merge modify-README - merges branches
+    * git branch -d modify-README -  Deleted branch modify-README
+    * git branch -D -  abandon the topic branch changes
+    * upload local repository content to a remote repository. git push
+    * push the main branch up to Heroku - git push heroku main
+    * git checkout [branch name] - switch  between branches
+    
+
