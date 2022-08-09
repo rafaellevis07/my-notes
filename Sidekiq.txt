@@ -2,6 +2,91 @@
 https://github.com/mperham/sidekiq
 https://sidekiq.org
 https://guides.rubyonrails.org/active_job_basics.html
+https://shakuro.com/blog/sidekiq-tutorial-overview
+https://www.bootrails.com/blog/rails-sidekiq-tutorial/
 
-// Youtube Playlist
-https://www.youtube.com/playlist?list=PLjeHh2LSCFrWGT5uVjUuFKAcrcj5kSai1}
+// Youtube 
+https://www.youtube.com/playlist?list=PLjeHh2LSCFrWGT5uVjUuFKAcrcj5kSai1}    (playlist)
+https://www.youtube.com/watch?v=aaGSh38nzq8
+https://www.youtube.com/watch?v=GBEDvF1_8B8
+
+
+// What is Sidekiq?
+Sidekiq is a Ruby-written open source job scheduler. It is important to be aware that Sidekiq does not do scheduling by default, it only performs jobs.  Sidekiq is a default tool for a Ruby application that improves its performance and response wait time. 
+
+
+// What is a background Job? By Mike Perham Podcast
+Background Job is a unit of work for your business (app), if you want to accept a form, or transcode an image, or send an email, all these things are units of work that your business need to do for some reason. Sidekiq is a generic claim-work to run these jobs asynchronously and provide APIs on top of that.
+ 
+
+// Why do we use Sidekiq in rails applications?
+Ruby, Sidekiq uses simple, efficient background processing to handle many jobs simultaneously in the same process using threads. Developers use tools like Sidekiq that allow them to run background jobs, i.e., automated processes outside of the request-response cycle so users don’t have to wait in a queue. 
+
+// Execution of Sidekiq in rails application
+- First, the Controller creates an asynchronous process and that process details store the queue.
+- Queue is a data store that is similar to a data structure.
+- Worker is similar to a ruby object so it is deployed to another object to handle the ruby process.
+- Multiple Workers are executed parallelly if they perform async use during the worker call.
+- After completing the process, it will be generated to an HTTP request.
+
+
+// Redis
+Sidekiq works closely with Redis 4.0+ to organize job queues and store statistics. Redis (stands for Remote Dictionary Server) is a fast open source in-memory key-value data store (Database). It provides sub-millisecond response times and allows real-time applications to run millions of requests per second.
+
+
+// Queues
+Queues represent the list of tasks in the order they are added and can be named by purpose (default, mail, reports) or by priority (low, normal, high)  
+
+
+
+// How to install Sidekiq:
+1. Add Sidekiq to your Gemfile:
+# Gemfile
+    
+gem 'sidekiq'
+
+
+# config/routes.rb
+Rails.application.routes.draw do
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
+.
+.
+.
+end
+
+2. Send the background jobs to sidekiq and not to rails
+# config/environments/development && #production
+
+config.active_job.queue_adapter = :sidekiq
+
+
+// How to use Sidekiq - Build the job on the queue and  create the worker that will process it
+
+1. Define worker classes:
+# app/workers/generate_report_worker.rb
+    
+class GenerateReportWorker
+  include Sidekiq::Worker
+    
+  def perform(user_id)
+    # do your reporting here
+  end
+end
+
+2. Start Sidekiq as a separate process:
+$ bundle exec sidekiq
+
+3. Start scheduling your workers:
+# Task is to be executed as soon as possible
+GenerateReportWorker.perform_async(user.id)
+    
+# Task is to be executed in 5 minutes
+GenerateReportWorker.perform_in(5 * 60, user.id)
+    
+# Task is to be executed at a certain moment (3 hours from now)
+GenerateReportWorker.perform_at(Time.now + 10800, user.id
+
+ 4. To execute a worker immediately:
+MySimpleWorker.new.perform("I was performed!")
