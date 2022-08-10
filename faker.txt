@@ -1,0 +1,43 @@
+• Docs
+https://github.com/faker-ruby/faker
+https://medium.com/@isaacfalkenstine/using-faker-in-a-rails-application-9f6667255b38
+https://www.rubydoc.info/gems/faker/1.6.6
+
+
+// How to Install:
+1- Update Gem File:
+# Gemfile
+group: development do
+ .
+ .
+ .
+ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+end
+
+2- Require faker app in seeds
+# db/seeds.rb
+Require 'fake'
+
+
+//Usage
+
+Faker::Name.name      #=> "Christophe Bartell"
+Faker::Internet.email #=> "kirsten.greenholt@corkeryfisher.info"
+
+user = User.new
+    user = User.new
+    user.name = Faker::Name.name
+    user.email = Faker::Internet.email
+    user.username = Faker::Internet.username
+    user.age = Faker::Number.within(range: 1..90)
+    user.save!
+
+#It will generate a random name/email/data for you.
+
+
+// To generate multiple random data
+
+10.times do
+  title_1 = Faker::Book.title
+  Book.create(name: title_1)
+end

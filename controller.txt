@@ -1,0 +1,34 @@
+Useful things for controller
+
+• Action Button to call a method on the controller
+1- Create a route
+post '<name>', to: '<controller#action>', as: '<name>'
+post 'user_creator', to: 'users#user_creator', as: :user_creator     # Example
+
+2- Create a button o the view template
+<%= button_to "Name of the Button", action_path %>
+<%= button_to "Create Random User", user_creator_path %>    # Example
+
+
+3- If you didn't yet, create the action
+def some_action
+ #Do something 
+end 
+
+def user_creator
+    Puts "It is working!"
+end
+
+
+• flash notice.
+//Doc.
+https://www.rubyguides.com/2019/11/rails-flash-messages/
+
+1- Place the code on the top of the html.erb page you want to see the notice
+# views/examples/example.html.erb
+<p style="color: green"><%= notice %></p>
+
+
+2- Call flash with he message
+flash[:notice] = 'message'
+flash[:notice] = 'Job sent for Processing... Please wait!'    # Example

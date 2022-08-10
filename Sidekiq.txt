@@ -1,9 +1,8 @@
 // Docs
-https://github.com/mperham/sidekiq
+https://github.com/mperham/sidekiq/wiki/Getting-Started
 https://sidekiq.org
 https://guides.rubyonrails.org/active_job_basics.html
 https://shakuro.com/blog/sidekiq-tutorial-overview
-https://www.bootrails.com/blog/rails-sidekiq-tutorial/
 
 // Youtube 
 https://www.youtube.com/playlist?list=PLjeHh2LSCFrWGT5uVjUuFKAcrcj5kSai1}    (playlist)
@@ -30,17 +29,13 @@ Ruby, Sidekiq uses simple, efficient background processing to handle many jobs s
 - After completing the process, it will be generated to an HTTP request.
 
 
-// Redis
-Sidekiq works closely with Redis 4.0+ to organize job queues and store statistics. Redis (stands for Remote Dictionary Server) is a fast open source in-memory key-value data store (Database). It provides sub-millisecond response times and allows real-time applications to run millions of requests per second.
-
-
 // Queues
 Queues represent the list of tasks in the order they are added and can be named by purpose (default, mail, reports) or by priority (low, normal, high)  
 
 
 
 // How to install Sidekiq:
-1. Add Sidekiq to your Gemfile:
+1. Add Sidekiq to your Gemfile and modify files:
 # Gemfile
     
 gem 'sidekiq'
@@ -64,29 +59,36 @@ config.active_job.queue_adapter = :sidekiq
 
 // How to use Sidekiq - Build the job on the queue and  create the worker that will process it
 
-1. Define worker classes:
-# app/workers/generate_report_worker.rb
-    
-class GenerateReportWorker
-  include Sidekiq::Worker
-    
-  def perform(user_id)
-    # do your reporting here
+1. Build sidekiq job:
+$ rails generate sidekiq:job <job_name>
+$ rails generate sidekiq:job user   # example    
+
+
+# It will create a file at app/jobs/<job_name>.rb    
+class UserJob
+  include Sidekiq::Job
+  sidekiq_options retry: false          # It is optional, sidekiq won't retry in case job fails.
+
+  def perform(arg1, arg2)
+    # Should do something
   end
 end
 
-2. Start Sidekiq as a separate process:
-$ bundle exec sidekiq
 
-3. Start scheduling your workers:
+2. Start scheduling a job:
+
 # Task is to be executed as soon as possible
-GenerateReportWorker.perform_async(user.id)
+UserJob.perform_async('bob', 5)
     
 # Task is to be executed in 5 minutes
-GenerateReportWorker.perform_in(5 * 60, user.id)
+UserJob.perform_in(5.minutes, 'bob', 5)
+or
+UserJob.perform_at(5.minutes.from_now, 'bob', 5)
     
-# Task is to be executed at a certain moment (3 hours from now)
-GenerateReportWorker.perform_at(Time.now + 10800, user.id
+# Task is to be executed at a certain moment (5 min from now)
+UserJob.perform_at(Time.now+5*60, 'bob', 5)
 
- 4. To execute a worker immediately:
-MySimpleWorker.new.perform("I was performed!")
+
+
+3. Start Sidekiq as a separate process:
+$ bundle exec sidekiq

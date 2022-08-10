@@ -10,6 +10,16 @@ $brew install redis
 
 //To run redis:
 $redis-server. #Once running, you don't need to start again.
+or
+
+// start Redis server:
+$ brew services start redis
+
+// stop Redis server:
+$ brew services stop redis
+
+// restart Redis server:
+$ brew services restart redis
 
 
 // Command line-interface (repl into the redis queue 
