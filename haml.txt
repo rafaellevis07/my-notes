@@ -9,6 +9,10 @@ https://haml.info/docs/yardoc/file.REFERENCE.html#using_haml
 https://www.youtube.com/watch?v=ncvVnbWjmIk&t=217s
 
 
+//Translator
+https://html2haml.herokuapp.com    #revise code before paste
+https://haml2erb.org   #revise code before paste
+
 -----------------------------------------------------------------------------------------------------
 
 Quick tips
