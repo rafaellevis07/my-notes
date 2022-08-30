@@ -16,7 +16,7 @@ end
 
 2- Require faker app in seeds
 # db/seeds.rb
-Require 'fake'
+require 'fake'
 
 
 //Usage

@@ -1,0 +1,49 @@
+// Docs
+https://github.com/haml/haml
+https://riptutorial.com/ruby-on-rails/example/27650/haml---an-alternative-way-to-use-in-your-views
+https://haml.info/docs/yardoc/file.REFERENCE.html#using_haml
+
+
+
+//Youtube
+https://www.youtube.com/watch?v=ncvVnbWjmIk&t=217s
+
+
+-----------------------------------------------------------------------------------------------------
+
+Quick tips
+% -> use % instead of tags
+# -> use # instead of id
+. -> use . instead of class
+= -> use = instead of <%= %>
+- -> use - instead of <% %> 
+
+1- Common elements like divs can be written in a short way
+
+HTML
+
+<div class="myclass">My Text</div>
+HAML
+
+%div.myclass
+HAML, shorthand
+
+.myclass
+
+
+2- Attributes
+
+HTML
+
+<p class="myclass" id="myid">My paragraph</p>
+HAML
+
+%p{:class => "myclass", :id => "myid"} My paragraph
+Inserting ruby code
+
+3- You can insert ruby code with the = and - signs.
+
+= link_to "Home", home_path
+Code starting with = will be executed and embedded into the document.
+
+Code starting with - will be executed, but not inserted into the document.
