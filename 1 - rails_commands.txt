@@ -1,0 +1,122 @@
+https://rubyonrails.org/
+
+
+https://guides.rubyonrails.org/ -- DOCS
+
+
+https://guides.rubyonrails.org/getting_started.html -- GETTING STARTED DOCS
+
+
+
+======================================================================== new app:
+
+$ gem install rails -v 7.0.3
+
+$ rails new blog
+$ cd blog
+$ bundle install
+$ rails server      # Or  $ rails s
+
+
+======================================================================== $ bundle commands:
+
+$ bundle
+$ bundle install
+$ bundle add <gem>
+
+$ bundle info <gem>
+
+======================================================================== rails commands 
+
+
+//docs
+https://guides.rubyonrails.org/command_line.html
+
+
+
+$ rails new --help
+$ rails new blog
+$ rails new blog -T     # skips rails testing framework # used to use rspec
+$ rails new blog -d postgresql
+$ rails new blog  --css bootstrap -d postgresql 
+$ rails new myapp --css tailwind
+$ rails new blog3 --css bootstrap
+
+
+$ rails s
+
+
+#
+# runs forman and css stuff 
+# what does this do? compile the CSS? watch for changes? - SEEMS NOT, need to refresh page    # creates some files ?  Procfile.dev 
+#
+$ ./bin/dev   
+
+
+$ bin/rails console
+
+
+$ rails test        # Returns test: 2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+
+$ rails db:system:change --to=postgresql  # Changes to Postgresql
+
+$ rails g --help
+$ rails g model --help
+$ rails g controller --help
+
+$ bin/rails db:create  # not tested
+$ bin/rails db:migrate
+$ bin/rails db:rollback # undoes 1 migration
+
+
+========================================================================
+// Bash commands & RoR most used commands.
+
+$ pwd - Present working Directory
+
+$ ls - List of folders or files in the folder in the computer
+
+$ cd - Change directory
+
+$ mv <source> <target>- move file(rename)
+
+$ cp <source> <target>- copy file
+
+$ rm - remove file
+
+$ rmdir - remove empty directory
+
+$ rm -rf - remove nonempty directory
+
+$ cat - concatenate & display file contents
+
+** tab key - use tab to auto complete the name of the folder or file
+
+** Ctrl + R - searches a command from history in Terminal. It will return the latest command that matches your input.
+
+** Ctrl + L - clears terminal
+
+$ mkdir - create or make a new folder
+
+$ rails  server - Initialize server
+
+$ rails  console - Initialize console
+
+$ rails  generate controller Name action1 action 2 - Generates a controller and actions.
+
+$rails  generate model Name attribute1 attribute2 - Generates a model and attributes.
+
+$rails  destroy controller Name action1 action 2 - Destroys a controller and actions.
+
+$rails  destroy model Name attribute1 attribute2 - Destroys a model and attributes.
+
+$ rails  generate migration  CreateTable - creates table
+
+$ rails g migration AddMyColumnToTable - create column 
+
+$ rails  db:migrate - Execute the migrations of your currently configured migrations directory
+
+$ rails db:rollback - Reverts last migration, restores database to a state, before last migration
+
+$ rails db:drop - Destroys/Deletes database (use as last resort)
+

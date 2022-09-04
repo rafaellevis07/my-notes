@@ -5,6 +5,8 @@ Ruby Commands
 * p statement - p “hello world”
 * Parentheses are optional. There is no need for it in Ruby.
 * Comment -  #Comment 
+* irb - It is the console of the ruby language on the terminal
+	** Load a file into irb - irb -r “./file.rb” or load “./file.rb”
 * Defining Methods - 
 def name
 	body
