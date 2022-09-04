@@ -1,0 +1,26 @@
+When to test?
+
+
+# When a test is especially short or simple compared to the application code it tests, lean toward writing the test first.
+
+# When the desired behavior isn’t yet crystal clear, lean toward writing the application code first, then write a test to codify the result.
+
+# Because security is a top priority, err on the side of writing tests of the security model first.
+
+# Whenever a bug is found, write a test to reproduce it and protect against regressions, then write the application code to fix it.
+
+# Lean against writing tests for code (such as detailed HTML structure) likely to change in the future.
+
+# Write tests before refactoring code, focusing on testing error-prone code that’s especially likely to break.
+
+
+
+=====================================================================================================
+
+How to test: 
+
+* we need to run our test suite to verify that the tests currently pass
+
+$ rails db:migrate     # Necessary on some systems
+$ rails test
+2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
