@@ -1,0 +1,14 @@
+Introduction to CRUD
+
+Four Main Data Operations
+* Create
+You want to be able to create or add data to a database
+
+* Read
+You want to read the data. It includes searching and filtering the results set.
+
+* Update
+You want t update or edit rows of data in any of the tables.
+
+* Delete
+You need to remove the data or delete the data.

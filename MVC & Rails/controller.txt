@@ -2,7 +2,7 @@ Useful things for controller
 
 • Action Button to call a method on the controller
 1- Create a route
-post '<name>', to: '<controller#action>', as: '<name>'
+post '<path>', to: '<controller#action>', as: '<name>'
 post 'user_creator', to: 'users#user_creator', as: :user_creator     # Example
 
 2- Create a button o the view template
