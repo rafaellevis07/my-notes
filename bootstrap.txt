@@ -1,0 +1,39 @@
+// docs
+https://github.com/twbs/bootstrap-rubygem
+https://getbootstrap.com/docs/5.2/getting-started/introduction/
+
+
+
+gem 'bootstrap', '~> 5.1.3'
+
+
+$ bundle install
+
+
+
+app/assets/stylesheets/application.css  --> rename to: application.scss
+@import "bootstrap";
+
+
+$ rails g scaffold user firstname:string lastname:string
+
+
+$ rails db:migrate
+
+
+
+// routes
+root 'users#index'
+
+
+
+// users index view -- add your bootstrap code here
+
+
+
+
+$ rails s
+
+
+// refresh browser
+http://localhost:3000/
