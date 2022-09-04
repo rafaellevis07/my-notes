@@ -1,0 +1,301 @@
+Ruby Commands
+* Put String - puts “hello world” 
+* Pause Execution seconds - sleep(2) (how many seconds in the parentheses)
+* Print statement - print “hello world”
+* p statement - p “hello world”
+* Parentheses are optional. There is no need for it in Ruby.
+* Comment -  #Comment 
+* Defining Methods - 
+def name
+	body
+end
+* Variable - name = “Value”
+* Method Arguments - 
+def add(first, second)
+  puts first + second
+end
+* Method Return Value -  answer = gets.chomp
+* String Concatenation -  string = “a” + “b” => “ab”
+* String Interpolation -  “This is a string: #{string}” =>“This is a string: ab”
+* Method on an object - string = “AA” =>puts string.length.even?
+* Math operations -  number = number +1  => 3 Or number += 1 =>  3
+* Convert Strings to Numbers - string.to_i
+* Comparison operators 
+
+== Equal to
+!= Not equal
+< Less than
+> Greater than
+<= Less than or equal to
+>= Greater than or equal to
+
+* if statement - 
+if 75 > 50
+Puts “75 > 50”
+end
+
+* unless statement - 
+number = 75
+unless number > 50
+puts “number > 50 “
+end
+
+
+* Boolean Operators - AND (&&), OR (||), NOT (!)
+* elsif and else - 
+if_condition = false
+if if_condition
+puts “if clause”
+elsif elsif_condition
+puts “elsif clause”
+end
+else
+puts “else clause”
+end 
+
+* Arrays - 
+grocery_list = [ ]
+or
+grocery_list = Array.new
+
+* Adding items to array - 
+End of array:
+grocery_list.push(“carrots”)
+or
+grocery_list  << “carrots”
+or
+grocery_list  +=  “carrots”
+
+Beginning of the array:
+grocers_list.unshift(“potatoes”)
+
+* Accessing items - 
+grocery_list[0]
+or
+grocery_list[-1] (end of the array)
+
+* Removing items from an array 
+grocery_list.pop (end)
+grocery_list.shift(beginning)
+
+* Ruby Loop - 
+loop do
+  print "Do you want to continue? (y/n) "
+  answer = gets.chomp.downcase
+  if answer == "n"
+    break
+  end
+end
+
+* Create a random number - 
+random_number = Random.new.rand(5)
+
+* While Loop - 
+answer = ""
+while answer != "n"
+  print "Do you want me to repeat this pointeless loop again? (y/n)"
+  answer = gets.chomp.downcase
+end
+
+* Until loop - 
+answer = "" 
+until answer == "n" do
+print "Do you want this loop to continue? (y/n)"
+  answer = gets.chomp
+end
+
+* Iteration with Each - 
+variable_name.each do |item|
+  puts "The current item is #{item}. 
+end
+
+or 
+
+variable_name.each { |item| puts "The current item is #{item}. }
+
+
+* Hash Iteration - 
+Both key and value:
+business.each do |key, value|
+  puts "The hash key is #{key} and the value is #{value}"
+end
+
+Key only :
+business_each_key do |key|
+  puts "Key: #{key}"
+end
+
+Value only:
+business_each_value do |value|
+  puts "Value: #{value}"
+end
+
+
+* Times Iteration 
+5.times do
+  puts "Hello!"
+end
+
+or
+
+5.times do |item|
+  puts "Hello! #{item}"
+end
+
+
+* For loops - 
+for item in 1..10
+  puts "The current item is #{item}"
+end
+
+
+* Ruby Classes - 
+name = String.new(“Rafa”)
+=> “Rafa”
+
+
+* Creating a New Class - 
+class Name
+  def first_name
+    "First"
+  end
+  
+  def last_name
+    "Last"
+  end
+end
+
+
+* Instance variable - marked with @
+Ex.
+class Name
+  def initialize(title)
+    @title = title
+  end
+
+def title
+	@title
+end 
+ 
+def first_name
+    "First"
+ end
+  
+def last_name
+    "Last"
+  end
+end
+
+
+* Attribute reader -  attr_reader :attribute
+* Attribute Writers - attr_writer :attribute
+* Attribute Accessors - attr_accessor :attribute 
+* to_s method in classes - 
+def to_s
+    full_name_with_title
+  end
+* Method for currency - 
+puts sprintf("%0.2f", 23)
+=> 23.00
+
+
+In Sinatra
+* Establishing a route - 
+get("/apple") do
+  "Here's is a juicy apple!"
+end
+
+* Exit Sinatra - Ctrl + C
+* Common HTTP requests method
+    * GET - retrieves the resource from the server
+    * POST - adds a new resource to the server
+    * PUT - modifies an existing resource
+    * DELETE - deletes a resource
+
+* The root Path
+get "/" do
+  "<h1>Welcome to our Wiki!</h1>"
+end
+
+* Embedded Ruby Extension - 
+file.rb
+
+* ERB in route - 
+get "/" do
+  erb :welcome
+end
+
+* URL Parameteres - 
+get "/:title" do
+  params[:title]
+end
+
+* ERB Tags - 
+    * Regular embedding tags - Start with <% and ends with %>.
+    * Output embedding tags - Start with <%= and ends with %>
+
+* HTML Forms - 
+<form>
+  <input type="text" name="title">
+  <input type="submit"
+</form>
+
+* Submitting forms - 
+<div>
+  <form method="post" action="/create">
+    <fieldset>
+      <label for="title">Title:</label>
+
+* Route for post requests - 
+post "/create" do
+  "Hello from the post '/create' route!"
+end
+
+* A route for PUT Requests - 
+edit.erb
+<div>
+  <form method="post" action="/<%= @title %>">
+    <input type="hidden" name="_method" value="put">
+
+app.rb
+put "/:title" do
+  save_content(params[:title], params[:content])
+  redirect "/#{params[:title]}"
+end
+
+* Deleting Pages - 
+…
+<div>
+  <a href="/<%= @title %>/edit">Edit This Page</a>
+  <form method="post" action="/<%= @title %>">
+    <input type="hidden" name="_method" value="put">
+    <input type="submit" value="Delete This Page">
+    </form>
+</div>
+
+app.rb
+delete "/:title" do
+  delete_content(params[:title])
+  redirect "/"
+end
+
+* Linking a CSS file to HTML - 
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href=“/style.css">
+  </head>
+…
+
+* Layout - 
+…
+<body>
+    <%= yield %>
+  </body>
+</html>
+
+app.rb
+get "/" do
+  erb :welcome, layout:
+end
+…

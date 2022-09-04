@@ -1,0 +1,42 @@
+// youtube
+https://www.youtube.com/watch?v=71eKcNxwxVY
+
+
+// github
+https://github.com/rspec/rspec-rails
+
+// docs - Double check docs 
+https://rspec.info
+https://relishapp.com/rspec/rspec-rails/docs
+https://relishapp.com/rspec/rspec-rails/v/5-1/docs/matchers
+https://relishapp.com/rspec/rspec-rails/v/5-1/docs/controller-specs
+
+
+
+
+
+====================================================================================================
+
+# What is it?
+- It is a testing framework for rails
+
+
+//Create a new application
+$rails new template -T        # -T will skip the test framework that comes bundled with rails
+
+
+// Gemfile - Add under development and test group
+group :development, :test do
+   gem 'rspec-rails'
+
+
+$ bundle install  # so we can have the rspec executable
+
+
+
+$ rails generate rspec:install
+
+
+
+====================================================================================================
+
