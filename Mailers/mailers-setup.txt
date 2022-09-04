@@ -11,7 +11,7 @@ https://www.youtube.com/watch?v=eYhi_rbnOo8
 
 # This is to use a google mailers.
 # You can do at the development or production environment.
-# If development environment to test out email functionality before production, comment out: config.action_mailer.delivery_method = :letter_opener. 
+# If in development environment, test email functionality before production, comment out: config.action_mailer.delivery_method = :letter_opener. 
 
 
 # Go to action mailer documentation, copy the code bellow and paste it on desired environment.
