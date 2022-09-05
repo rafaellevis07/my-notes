@@ -1,6 +1,8 @@
 // docs
-https://github.com/twbs/bootstrap-rubygem
-https://getbootstrap.com/docs/5.2/getting-started/introduction/
+Course
+- https://store.afomera.dev/view/courses/learn-hotwire/681541-getting-started/1974282-bootstrapping-our-rails-app
+- https://github.com/twbs/bootstrap-rubygem
+- https://getbootstrap.com/docs/5.2/getting-started/introduction/
 
 
 
