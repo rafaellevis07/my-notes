@@ -5,7 +5,10 @@ and are updating the same lines of code
 
 # what to do now?
 
-    $ git fetch --all && git merge origin/main   
+    $ git fetch --all && git merge origin/main
+    # ATTENTION: git fetch is for downloading commits from remote branches to local computer.
+    # ATTENTION: origin/main is not the same branch as main.
+
 
 # and fix the conflict locally
 
