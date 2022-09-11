@@ -1,0 +1,15 @@
+// The ideal way to create an app is by creating it with all the requirements needed.
+
+rails new <app_name> --css bootstrap
+
+//run 
+$ rails g scaffold item name:string description:text        #It can be any item
+$ rails db:migrate
+
+Start the server as 
+
+$ ./bin/dev
+
+#or 
+
+$rails s
