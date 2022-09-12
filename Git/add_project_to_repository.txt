@@ -1,10 +1,25 @@
-// Create a new repository -> 
+# Create a new repository -> 
 
-#  Go to “+” >> new repository >> Name the repository 
-#  >> set to public  >> add README >> Create Repository button
+// On github:
+    Go to “+” >> new repository >> Name the repository specifically >> 
+    set to public  >> add README >> Create Repository button
 
 
-// Those are examples. Github will have the correct links
+  // On the terminal:
+ 	$ cd <directory_name>            	  # Change to the directory created. cd PROJECTS
+	$ git clone <github_repository_link>      # Clone repository to local
+   Ex. git clone https://github.com/rafaellevis07/project-name.git
+	
+	$ ls                                      # List items inside directory
+	$ cd <repository_name>			  # Change to the repository that was cloned
+	$ git status				  # Check git status. If there is any changes to push
+	$ git add . 	/ git add -A		  # Add new or changed files in your working directory to the Git staging area.
+	$ git add <file_name> 				  # Add determined file
+  	$ git commit -m "<commit_message>"	  # Describe what was created or changes
+ 	$ git push				  # Upload the commits to Github
+
+
+// Those are ways and examples that Github provided
 ===========================================================================================
 
 # create a new repository on the command line
@@ -39,21 +54,3 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 // What has been working for me:
 
 
-# Create a new repository -> 
-
-// On github:
-    Go to “+” >> new repository >> Name the repository specifically >> set to public  >> add README >> Create Repository button
-
-
-  // On the terminal:
- 	$ cd <directory_name>            	  # Change to the directory created. cd PROJECTS
-	$ git clone <github_repository_link>      # Clone repository to local
-   Ex. git clone https://github.com/rafaellevis07/project-name.git
-	
-	$ ls                                      # List items inside directory
-	$ cd <repository_name>			  # Change to the repository that was cloned
-	$ git status				  # Check git status. If there is any changes to push
-	$ git add . 	/ git add -A		  # Add new or changed files in your working directory to the Git staging area.
-	$ git add <file_name> 				  # Add determined file
-  	$ git commit -m "<commit_message>"	  # Describe what was created or changes
- 	$ git push				  # Upload the commits to Github
