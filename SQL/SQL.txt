@@ -113,3 +113,174 @@ SELECT * FROM products WHERE category IN ("eBooks", "Books", "Comics");
 SELECT <columns> FROM <table> WHERE <column>  NOT IN (<value 1>, <value 2>, ...);
 SELECT answer FROM answers WHERE id IN (7, 42);
 SELECT * FROM products WHERE category NOT IN ("Electronics");
+
+
+# Searching within a range of Values
+
+- Again, writing shorter queries can help with readability and tracking down mistakes in our SQL code. 
+
+SELECT <columns> FROM <table> WHERE <column> BETWEEN <lesser value> AND <greater value>;
+SELECT * FROM movies WHERE release_year BETWEEN 2000 AND 2010;
+SELECT name, description FROM products WHERE price BETWEEN 9.99 AND 19.99;
+
+
+
+======================================================================
+
+
+# Finding Data that matches a Pattern
+
+- Placing the percent symbol (%) any where in a string in conjunction with the LIKE keyword will operate as a wildcard. Meaning it can be substituted by any number of characters, including zero!
+
+- A wild card is a substitute character used when you don’t know the rest of the text. 
+
+- It can be placed anywhere in your search to help find different things.
+
+- In SQL the % can be any number even 0. Also if you don’t now the capitalization, you can use % as a wild card
+
+SELECT <columns> FROM <table> WHERE <column> LIKE <pattern>;
+SELECT title FROM books WHERE title LIKE "Harry Potter%Fire";
+SELECT title FROM movies WHERE title LIKE "Alien%";
+
+
+# Filtering Out or Finding Missing Information 
+
+- A missing value is known as a null value, but since it can’t be used with equality operator, we use it with IS key word.
+
+- Or to select those that are not NULL, we use  IS NOT NULL
+
+SELECT <columns> FROM <table> WHERE <column> IS NULL
+SELECT <columns> FROM <table> WHERE <column> IS NOT NULL
+
+
+
+===================================================================
+
+
+# Adding a row to a table 
+
+    //Inserting a single row:
+INSERT INTO <table> VALUES (<value 1>, <value 2>, ...);
+            # This will insert values in the order of the columns prescribed in the schema.
+
+INSERT INTO users VALUES  (1, "chalkers", "Andrew", "Chalkley");
+INSERT INTO users VALUES  (2, "ScRiPtKiDdIe", "Kenneth", "Love");
+
+    //Inserting a single row with values in any order:
+
+INSERT INTO <table> (<column 1>, <column 2>) VALUES (<value 1>, <value 2>);
+INSERT INTO <table> (<column 2>, <column 1>) VALUES (<value 2>, <value 1>);
+
+INSERT INTO users (username, first_name, last_name) VALUES ("chalkers", "Andrew", "Chalkley");
+
+
+# Adding multiple rows to a table
+
+    //Inserting multiple rows in a single statement:
+
+INSERT INTO <table> (<column 1>, <column 2>, ...) 
+             VALUES 
+                    (<value 1>, <value 2>, ...),
+                    (<value 1>, <value 2>, ...),
+                    (<value 1>, <value 2>, ...);
+
+INSERT INTO users (username, first_name, last_name) 
+    VALUES 
+                  ("chalkers", "Andrew", "Chalkley"),
+                  ("ScRiPtKiDdIe", "Kenneth", "Love");
+
+
+
+===================================================================
+
+
+# Update all rows or columns in a table 
+
+    // An update statement for all rows:
+
+UPDATE <table> SET <column> = <value>;
+            # The "=" sign is different from an equality operator from a WHERE condition. It's an assignment operator because you're assigning a new value to something.
+
+UPDATE users SET password = "thisisabadidea";
+UPDATE products SET price = 2.99;
+
+    // Update multiple columns in all rows:
+
+UPDATE <table> SET <column 1> = <value 1>, <column 2> = <value 2>;
+Examples:
+
+UPDATE users SET first_name = "Anony", last_name = "Moose";
+UPDATE products SET stock_count = 0, price = 0;
+
+
+# Updating Specific Rows
+
+    // An update statement for specific rows:
+
+UPDATE <table> SET <column> = <value> WHERE <condition>;
+
+UPDATE users SET password = "thisisabadidea" WHERE id = 3;
+UPDATE blog_posts SET view_count = 1923 WHERE title = "SQL is Awesome";
+
+
+    // Update multiple columns for specific rows:
+
+UPDATE <table> SET <column 1> = <value 1>, <column 2> = <value 2> WHERE <condition>;
+UPDATE users SET entry_url = "/home", last_login = "2016-01-05" WHERE id = 329;
+
+
+
+====================================================================
+
+
+# Removing Data From All Rows in a Table
+
+    // To delete all rows from a table:
+DELETE FROM <table>;
+
+DELETE FROM logs;
+DELETE FROM users;
+DELETE FROM products;
+
+        # It’s important to know that you can’t undo this. Without a backup of your data, once you do this, you lose all information.
+
+
+# Removing Specific Rows
+
+    // To delete specific rows from a table:
+
+DELETE FROM <table> WHERE <condition>;
+
+DELETE FROM users WHERE email = "andrew@teamtreehouse.com";
+DELETE FROM movies WHERE genre = "Musical";
+DELETE FROM products WHERE stock_count = 0;
+
+
+
+====================================================================
+
+Transactions
+
+Definitions:
+- Autocommit - every statement you write gets saved to disk.
+- Seeding - populating a database for the first time.
+- Script file - a file containing SQL statements.
+
+SQL Used
+
+Switch autocommit off and begin a transaction:
+BEGIN TRANSACTION;
+
+Or simply:
+BEGIN;
+
+To save all results of the statements after the start of the transaction to disk:
+COMMIT;
+
+// Check the picture
+
+
+# Rolling Back from Transactions
+
+To reset the state of the database to before the beginning of the transaction:
+ROLLBACK;
