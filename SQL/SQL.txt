@@ -109,3 +109,7 @@ SELECT title AS "Book Title", author AS Author FROM books WHERE year_released <=
 SELECT <columns> FROM <table> WHERE <column> IN (<value 1>, <value 2>, ...);
 SELECT name FROM islands WHERE id IN (4, 8, 15, 16, 23, 42);
 SELECT * FROM products WHERE category IN ("eBooks", "Books", "Comics");
+
+SELECT <columns> FROM <table> WHERE <column>  NOT IN (<value 1>, <value 2>, ...);
+SELECT answer FROM answers WHERE id IN (7, 42);
+SELECT * FROM products WHERE category NOT IN ("Electronics");
