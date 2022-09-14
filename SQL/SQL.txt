@@ -1,0 +1,111 @@
+
+//Docs
+    https://www.w3schools.com/sql/
+
+
+
+===================================================================
+
+
+# Statements and retrieving table
+
+- The asterisk or star symbol (*) means all columns.
+
+SELECT * FROM <table name>;
+SELECT * FROM books;
+
+
+
+# Retrieving singles columns 
+
+SELECT <column name> FROM <table name>;             
+SELECT <column name 1>, <column name 2>, ... FROM <table name>;     #multiple columns
+SELECT name, description, price FROM products;
+
+
+
+======================================================================
+
+
+# Categorizing Your Output with ‘AS’
+
+- The key word AS will transform the column name to uppercase.
+- Also you can rewrite the name of the column as you wish putting the new name between quotes. (Change the value of the column header presented)
+
+SELECT <column name> AS <alias> FROM <table name>;
+SELECT <column name> <alias> FROM <table name>;
+SELECT username AS Username, first_name AS "First Name" FROM users;
+SELECT title AS Title, year AS "Year Released" FROM movies;
+
+
+
+======================================================================
+
+
+# Searching Tables with “WHERE”
+
+
+- A WHERE Clause is used as condition, so it will only shows if the condition is met
+- The equality operator “=“ is strict, meaning is case sensitive.
+- If we want to call everything that is expect the information typed, we just need an exclamation point “!” in front of the equality operator. (!=)
+
+SELECT <columns> FROM <table> WHERE <condition>;
+SELECT * FROM contacts WHERE first_name = "Andrew";
+
+
+
+======================================================================
+
+
+# Filtering by comparing values
+
+
+    The not equal to or inequality operator can be written in two ways != and <>. The latter is less common.
+    < less than
+    <= less than or equal to
+    > greater than
+    >= greater than or equal to
+
+SELECT * FROM contacts WHERE first_name != "Kenneth";
+SELECT <columns> FROM <table> WHERE <column name> < <value>;
+SELECT <columns> FROM <table> WHERE <column name> <= <value>;
+SELECT <columns> FROM <table> WHERE <column name> > <value>;
+SELECT <columns> FROM <table> WHERE <column name> >= <value>;
+
+SELECT first_name, last_name FROM users WHERE date_of_birth < '1998-12-01';
+SELECT title AS "Book Title", author AS Author FROM books WHERE year_released <= 2015;
+SELECT name, description FROM products WHERE price > 9.99;
+SELECT title FROM movies WHERE release_year >= 2000;
+
+
+# Filtering by multiple conditions
+
+- you can test rows of information against multiple conditions. You can choose whether you retrieve rows that match both of your conditions or either of them.
+
+- You can compare multiple values in a WHERE condition. If you want to test that both conditions are true use the AND keyword, or either conditions are true use the OR keyword.
+
+SELECT <columns> FROM <table> WHERE <condition 1> AND <condition 2> ...;
+SELECT <columns> FROM <table> WHERE <condition 1> OR <condition 2> ...;
+SELECT username FROM users WHERE last_name = "Garcia" AND first_name = "Andrew";
+SELECT * FROM products WHERE category = "Games Consoles" AND price < 400;
+
+
+# Filtering by Dates
+
+- Filtering results by date can be handy for finding entries before or after a specific date
+
+SELECT <columns> FROM <table> WHERE <column name> < <value>;
+SELECT <columns> FROM <table> WHERE <column name> <= <value>;
+SELECT first_name, last_name FROM users WHERE date_of_birth < '1998-12-01';
+SELECT title AS "Book Title", author AS Author FROM books WHERE year_released <= 2015;
+
+
+
+=======================================================================
+
+
+# Searching Within a Set of Values
+
+SELECT <columns> FROM <table> WHERE <column> IN (<value 1>, <value 2>, ...);
+SELECT name FROM islands WHERE id IN (4, 8, 15, 16, 23, 42);
+SELECT * FROM products WHERE category IN ("eBooks", "Books", "Comics");
