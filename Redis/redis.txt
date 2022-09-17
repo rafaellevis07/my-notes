@@ -1,10 +1,10 @@
 
 
 // Redis
-# Sidekiq works closely with Redis 4.0+ to organize job queues and store statistics. 
-# Redis (stands for Remote Dictionary Server) is a fast open source in-memory key-value data store (Database). 
-# It provides sub-millisecond response times and allows real-time applications to run millions of requests per second. 
-# In other words Redis is a database, a key-value store.
+	# Sidekiq works closely with Redis 4.0+ to organize job queues and store statistics. 
+	# Redis (stands for Remote Dictionary Server) is a fast open source in-memory key-value data store (Database). 
+	# It provides sub-millisecond response times and allows real-time applications to run millions of requests per second. 
+	# In other words Redis is a database, a key-value store.
 
 
 # Install redis:
@@ -14,9 +14,9 @@
 #Start redis:
 	$redis-server          # Once running, you don't need to start again.
 
-or
+	or
 
-	$ brew services start redis
+	$ brew services start redis			# Usually use this one
 
 # stop Redis server:
 	$ brew services stop redis
@@ -33,7 +33,7 @@ or
 # Keys
 SET name "rafa"
 GET name # "rafa"
-DEL name # (nil)  # delete key and value
+DEL name # (nil)  				# delete key and value
 
 # Hashes
 HSET myhash name "rafa"

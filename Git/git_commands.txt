@@ -27,17 +27,16 @@ Go to “+” >> new repository >> Name the repository specifically >> set to pu
 ================================================================================================
 
 // Dealing with a branch:
-    $ git checkout -b modify-README                   # Switched to a new branch 'modify-README'
+    $ git checkout -b <branch-name>                   # Switched to a new branch 'modify-README'
     $ git commit -a -m "Improve the README file"      # commit all modifications and leaves a message
-    $ git checkout main                               # Switched to branch 'main'
-    $ git merge modify-README                         # merges branches
-    $ git branch -d modify-README                     # Deleted branch modify-README
+    $ git checkout <branch-name>                      # Switched to branch 'main'
+    $ git merge <branch-name>                         # merges branches
+    $ git branch -d <branch-name>                     # Deleted branch <branch-name>
     $ git branch -D                                   # abandon the topic branch changes
     $ git push                                        # upload local repository content to a remote repository.
     $ git push heroku main                            # push the main branch up to Heroku
     
-    
-
+	
 
 ====================================================================================================
 
