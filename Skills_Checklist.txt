@@ -1,0 +1,39 @@
+Directions
+
+Rails
+- [ ] Associations 
+- [ ] Models 
+- [ ] Controller 
+- [ ] View 
+- [ ] Hotwire  
+- [ ] Rspec 
+- [ ] Concerns
+- [ ] Forms
+- [ ] Import maps vs esbuild
+- [ ] Migration
+- [ ] Mailer
+- [ ] ERB
+- [ ] API
+
+
+- [ ] Scrum
+- [ ] Database - SQL e postgresql
+- [ ] HTML
+- [ ] Javascript
+- [ ] css 
+- [ ] git 
+- [ ] http 
+- [ ] SSL 
+- [ ] AWS - s3
+- [ ] heroku
+- [ ] OOP - Solid - Grasp
+- [ ] SDLC 
+- [ ] REGEX 
+- [ ] JS * (next time we meet)
+- [ ] security
+- [ ] bash
+- [ ] redis
+- [ ] sessions
+- [ ] ruby  ->  koans
+- [ ] yaml 
+- [x] Devise
