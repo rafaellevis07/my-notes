@@ -1,0 +1,8 @@
+// form docs:
+https://guides.rubyonrails.org/form_helpers.html
+https://medium.com/@michellekwong2/form-tag-vs-form-for-vs-form-with-fa6e0ac73aac#:~:text=Another%20difference%20between%20form_with%20compared,to%20be%20a%20bad%20thing.
+
+
+
+============================================================================================================
+
