@@ -1,8 +1,144 @@
 // form docs:
 https://guides.rubyonrails.org/form_helpers.html
 https://medium.com/@michellekwong2/form-tag-vs-form-for-vs-form-with-fa6e0ac73aac#:~:text=Another%20difference%20between%20form_with%20compared,to%20be%20a%20bad%20thing.
+https://apidock.com/rails/v5.2.3/ActionView/Helpers/FormHelper/form_with 
+
+
+============================================================================================================
+
+
+// Form_tag
+
+
+# form_tag generates an HTML form for us and lets you specify options you want for your form.
+# we use the rails method, url_for, to create a URL we want the form to submit to. 
+# This request for making a new post would have a URL of /posts and let Rails know the specific controller this URL is going to be for. 
+# Since HTML forms can only use GET and POST verbs, using the method option allows you to submit a form with, lets say, the delete HTTP verb as opposed to only using GET and POST.
+
+
+<%= form_tag url_for(action: ‘create’), method: “post” do %>
+    <%= label_tag ‘Title’ %>
+    <%= text_field_tag ‘title’, @post.title %>
+    <%= label_tag ‘Body’ %>
+    <%= text_area_tag ‘body’, @post.body %>
+    <%= label_tag ‘Author’ %>
+    <%= text_field_tag ‘author’, @post.author %>
+    <%= submit_tag “Create Post” %>
+<% end %>
+
+
+# form_tag has helper methods for each tag we want to create:
+
+label_tag -> <label></label>
+text_field_tag -> <input type=‘text’
+text_area_tag -> <textarea><textarea>
+submit_tag -> <input type=‘submit’
 
 
 
 ============================================================================================================
 
+
+// Form_for
+
+
+# form_for method follows RESTful conventions on its own. 
+# It accepts the instance of the model as an argument where it makes assumptions for you. 
+# form_for prefers the argument that you’re passing in to be an active record object. 
+# This will easily make a create or edit form.
+
+
+<%= form_for @post do |f| %>
+    <%= f.label :category_name %>
+    <%= f.text_field :category_name %>
+    <%= f.text_field :content %>
+    <%= f.submit %>
+<% end %>
+
+
+============================================================================================================
+
+
+// Form_with
+
+# Normally form_with is the one more commonly applied.
+# The form_with view helper came out to unify the interface of what form_for AND form_tag can do.
+# When you pass it a model, it will act the same way as form_for would.
+
+<%= form_with model: Post.new do |f| %>
+    <%= f.text_field :content %>
+<% end %>
+
+
+# if you don’t pass a model, form_with behaves like form_tag :
+
+<%= form_with url: posts_path do |f| %>
+    <%= f.text_field :content %>
+<% end %>
+
+
+# both would generate :
+
+<form action=”/posts” method=”post” data-remote=”true”>
+    <input type=”text” name=”content”>
+</form>
+
+
+
+============================================================================================================
+
+
+<%= form_with(
+{  
+  model: @post, 
+  data: { behavior: "autosave" }, 
+  html: { name: "go", id: "aaa", class: "bbb" }
+}
+) do |form| %>
+
+
+
+<%= form_with model: [@post, Comment.new] do |form| %>
+    <%= form.text_area :content, size: "20x5" %>
+    <%= form.submit %>
+<% end %>
+
+
+
+
+
+<h1>New Article</h1>
+
+<%= form_with model: @article do |form| %>    <!--  form_with:  When you pass it a model, it will act the same way as form_for would. -->
+  <div>                                       <!--               And if you don’t pass a model, form_with behaves like form_tag -->
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+========================================================================================================================== fields_for helper
+
+https://guides.rubyonrails.org/form_helpers.html#the-fields-for-helper
+
+
+
+
+<%= form_with model: @person do |person_form| %>
+  <%= person_form.text_field :name %>
+  <%= fields_for :contact_detail, @person.contact_detail do |contact_detail_form| %>
+    <%= contact_detail_form.text_field :phone_number %>
+  <% end %>
+<% end %>
+
+
+==============================================================================================================================
