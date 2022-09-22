@@ -8,7 +8,7 @@ Rails
 - [ ] Hotwire  
 - [ ] Rspec 
 - [ ] Concerns
-- [ ] Forms
+- [x] Forms
 - [ ] Import maps vs esbuild
 - [ ] Migration
 - [ ] Mailer
