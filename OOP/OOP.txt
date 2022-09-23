@@ -1,3 +1,10 @@
+// Docs (clean this up)
+https://www.rubyguides.com/ruby-tutorial/object-oriented-programming/
+https://medium.com/launch-school/the-basics-of-oop-ruby-26eaa97d2e98        <-- Implements four pillars of OOP with ruby
+https://launchschool.com/books/oo_ruby/read/the_object_model
+
+
+
 // Youtube Videos
 https://www.youtube.com/watch?v=pTB0EiLXUC8
 
@@ -22,7 +29,7 @@ https://www.youtube.com/watch?v=pTB0EiLXUC8
     <!-- We group related variables and functions that operate on them into  objects -->
         • Hide variables, use getters and setters, for the purpose of protection.
         • Hide unnecessary details in our classes and provide a clear and simple interface for working with them.
-        
+
 
 # Abstraction - Reduce complexity + isolate impact of changes 
 
@@ -59,7 +66,7 @@ https://www.youtube.com/watch?v=pTB0EiLXUC8
 
 # Aggregation
     <!-- Composition is a loose "part-of" relationship. 
-         One objects is the parent, and the other the child If the parent object is destroyed, the child objects would NOT cease to exist 
+         One objects is the parent, and the other the child. If the parent object is destroyed, the child objects would NOT cease to exist 
          Example: relationship between library and book, books will remain so even when the library is no more -->
 
 # Composition
