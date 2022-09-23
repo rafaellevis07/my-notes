@@ -1,0 +1,67 @@
+// Youtube Videos
+https://www.youtube.com/watch?v=pTB0EiLXUC8
+
+
+=============================================================================================
+
+
+# In OOP we combine a group of related variables and functions into a unit
+# This unit is called a object.
+# Variables are properties
+# functions are methods
+
+
+
+============================================================================================
+
+
+// Four Pillars of Object Oriented Programming
+
+# Encapsulation - Reduce complexity + increase reusability 
+
+    <!-- We group related variables and functions that operate on them into  objects -->
+        • Hide variables, use getters and setters, for the purpose of protection.
+        • Hide unnecessary details in our classes and provide a clear and simple interface for working with them.
+        
+
+# Abstraction - Reduce complexity + isolate impact of changes 
+
+    <!-- We can hide some of the properties and methods from the outside which gives us a couple benefits -->
+        • Simpler Interface - Using and understanding an object with a few properties and methods is easier than an object with several properties and methods 
+        • Reduce the impact of change - The changes on the inner properties won't leak to the outside code, it won't affect the rest of the app.
+        • Hide implementation, for the purpose of simplification.
+        • Deal with objects considering their important characteristics and ignore all other details.
+
+
+# Inheritance - Eliminate redundant code
+
+    <!-- Inheritance is a mechanism that allows you to eliminate redundant code. -->
+        • Inherit functionality of another class, write less code.
+        • Improves code readability and enable the reuse of functionality.
+
+
+# Polymorphism (Many forms) - Refactor ugly switch/case statements
+
+    <!-- Poly means many and morph means form. It is a technique that allows you to get rid of long ethanol's or switch and case statements
+        • Work in the same manner with different objects, which define a specific implementation of some abstract behavior.
+
+
+
+============================================================================================
+
+
+// OOP relationships
+# Inheritance
+    <!-- Inheritance is “IS-A” type of relationship. Example: Dog inherits from Animal. -->
+
+# Association
+    <!-- Association is a “has-a” type relationship. Example: doctor and a patient, they can exist independently. -->
+
+# Aggregation
+    <!-- Composition is a loose "part-of" relationship. 
+         One objects is the parent, and the other the child If the parent object is destroyed, the child objects would NOT cease to exist 
+         Example: relationship between library and book, books will remain so even when the library is no more -->
+
+# Composition
+<!-- Composition is a strict "part-of" relationship. Example: “an engine is part of a car”, “a heart is part of a body”. 
+     If the parent object is destroyed, the child objects would be destroyed also. -->
