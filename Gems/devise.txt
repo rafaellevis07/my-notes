@@ -37,6 +37,9 @@ root "static_pages#landing_page"
 // application.html.erb
 - add inside body tag, top:
 
+  <body>
+
+    <!-- RAFA START -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if current_user  %>
@@ -49,7 +52,9 @@ root "static_pages#landing_page"
       <%= link_to "login", new_user_session_path %>
     <% end  %>
     <%= link_to "Home", root_path %>
-
+    <!-- RAFA END -->
+    
+  </body>
 
 - http://localhost:3000/routes -- to see the routes
 
