@@ -12,7 +12,7 @@ Rails
 - [ ] Import maps vs esbuild
 - [ ] Migration
 - [ ] Mailer
-- [ ] ERB
+- [x] ERB
 - [ ] API
 - [x] Devise
 

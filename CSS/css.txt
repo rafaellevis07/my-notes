@@ -1,0 +1,25 @@
+// Docs
+https://www.w3schools.com/css/
+
+
+
+===================================================================================
+
+
+Must know
+- Box model
+- Flex / Flexbox
+- Grid
+- Selectors
+- Float
+- !important
+- Media queries
+- What is hard leave behind 
+
+
+Not necessary
+- 2D
+- 3D
+- Transitions
+- Animations
+- SASS Tutorial
