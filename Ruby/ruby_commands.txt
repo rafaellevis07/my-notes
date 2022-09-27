@@ -1,8 +1,10 @@
-Ruby Commands
-* Put String - puts “hello world” 
-* Pause Execution seconds - sleep(2) (how many seconds in the parentheses)
-* Print statement - print “hello world”
-* p statement - p “hello world”
+// Ruby Commands
+
+$ puts “hello world”              - Put String 
+$ print “hello world”             - Print statement
+$ p “hello world”                 - p statement
+
+$ sleep(2)                        - Pause Execution. Arguments in seconds
 * Parentheses are optional. There is no need for it in Ruby.
 * Comment -  #Comment 
 * irb - It is the console of the ruby language on the terminal

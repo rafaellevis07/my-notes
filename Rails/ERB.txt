@@ -1,0 +1,80 @@
+// Docs:
+https://www.rubyguides.com/2018/11/ruby-erb-haml-slim/
+
+
+
+=====================================================================================
+
+
+// ERB Tags
+
+    # To convert the response to actual HTML use ERB tags.
+    # You store static text, usually HTML in a file.
+    # Then using special ERB tags you embed Ruby code into the static text that displays changing the dynamic data.
+    # Each time the template is rendered each piece of Ruby code is evaluated to get a result.
+    # Those results are inserted into the template in place of the ERB tags,  giving you text changes each time the template is rendered.
+    
+
+
+=====================================================================================
+
+
+// There is two kinds of ERB Tags
+
+    # Regular embedding tags  
+        <!-- Start with "<%" and ends with "%>". -->
+        
+
+        <% grade = 97%>
+
+        <% if grade > 60 %> 
+            <p>You passed!</p>  
+        <% end %>
+
+        => You passed!
+        
+
+        <!-- Executes the ruby code within the brackets -->
+
+
+    # Output embedding tags 
+        <!-- Starts with "<%=" and ends with "%>" -->
+
+        <%= 2 + 2 %>
+        => 4
+        
+        //or
+        
+        <%= Time.now %>
+        =>2022-05-25 15:55:10 -0700
+        
+        <!-- Prints something into erb file. --> 
+
+* The tags contain ruby code in between the symbols.
+* When modifying ERB code, there is no need to restart the app. It loads each time it is rendered.
+* We can mix the two kinds of embedding tags. Nesting one inside of the other
+
+
+<% [1, 5, 25].each do |number| %>
+  <p><%= number %> fish </p>
+<% end %>
+
+=> 1 fish 5 fish 25 fish
+
+
+Embedding Page Data with ERB
+* To get the title content from the Sinatra route into the ERB templates we use instance variables.
+* One major benefit is that the code in a ERB template can access instance variables that you set in the Sinatra route.
+
+Ex.
+get "/:title" do
+  @title = params[:title]
+  @content = page_content(@title)
+  erb :show
+end
+
+* After that we create show.erb so we can access the instance variable that were set in the main file.
+
+Ex.
+<h1><%= @title %></h1>
+<p><%= @content %></p>
