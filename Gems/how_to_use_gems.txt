@@ -1,0 +1,3 @@
+// Docs:
+https://rubygems.org/
+https://rubydoc.info/gems
