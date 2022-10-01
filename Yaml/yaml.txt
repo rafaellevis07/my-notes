@@ -1,0 +1,160 @@
+// Docs:
+https://yaml.org
+https://github.com/yaml
+
+
+// Youtube
+https://www.youtube.com/watch?v=1uFVr15xDGg&t=20s
+
+
+// Resources:
+Online YAML Validator:           ►  http://www.yamllint.com/
+Json2Yaml Converter:            ► https://www.json2yaml.com/
+
+
+
+===================================================================================
+
+
+// What is yaml - YAML - Yaml Ain't Markup Language
+
+    <!-- Yaml is a data serialization language, which means application written 
+         with a different technology can transfer data to each other using a common 
+         agreed-on or a standard format -->
+
+    # It is human readable and intuitive
+    # file_name.yaml
+    # YAML is superset of JSON: any valid JSON file is also valid YAML file 
+    # Data Structures are defined through line separations and spaces with indentations (validation error with one single space and data structure wrong)
+
+
+
+==================================================================================
+
+
+// YAML Syntax
+
+# key-value pairs:
+
+    app: user-authentication            # The string can be enclosed with quotes or not
+    port: 9000                          
+    version: 1.7
+
+
+# Comments:
+  <!-- Everything that starts with "#" yaml interprets as Comments -->
+
+    # comment here
+    app: user-authentication            
+    port: 9000         
+    # another comment here                 
+    version: 1.7
+
+
+# Objects:
+  <!-- you can create an object in yaml by indenting the "key-value pairs" and enclosing it in an object -->
+
+    microservice:
+        app: user-authentication            
+        port: 9000                          
+        version: 1.7
+
+    # Space needs to be exactly the same for each attribute of the object
+    # Because YAML is so sensitive about spaces and indentations it is always a good idea to use YAML validator before you execute a configuration file
+
+
+# Lists:
+  <!-- By using "-" we create (or transform the object into) a list in YAML --> 
+
+    microservice:                                              # List
+        - app: user-authentication                          # Item of the list
+          port: 9000                          
+          version:                                           
+          - 1.9                                             # List nesting list (You can align it with the parent or indent it)
+          - 2.0
+          - 2.1
+        - app: shopping-cart                                # Item 2 of of the list
+          port: 9002
+          version: [1.9, 2.0, 2.1]                          # Lists can be nested with "[]", makes more readable
+
+    // or
+
+    micromicroservice:
+        - user-authentication            
+        - shopping-cart
+
+
+# Booleans:
+
+ microservice:
+        - app: user-authentication            
+          port: 9000                          
+          version: 1.7
+          deployed: true                      # YAML can also express boolean expression with "yes" or "no" // "on" or "off"
+
+
+# Multiline Strings:
+  <!-- The way i can do that is using the pipe symbol "|"
+
+    multilineString: |
+      this is a multiline string
+      and this is the next line
+      next line 
+    
+    //or
+
+  <!-- In case you want a single long line, use ">" -->
+    multilineString: >
+      this is a single line string.
+      that should be all on one line.
+      some other stuff 
+
+
+# Environment Variables:
+  <!-- If there is a need of using a environmental variable defined, we can access it using a "$" --> 
+  
+
+  #readiness probe
+  command:
+   - /bin/sh
+   - -ec 
+   - >-
+     mysql -h 127.0.0.1 -u root -p$MYSQL_ROOT_PASSWORD -e 'SELECT 1'
+
+
+# Placeholders:
+  <!-- Instead of directly writing the values, define placeholders "{{ .Values.service.example }} -->
+
+    apiVersion:v1
+    kind: Service 
+    metadata:
+        name: {{ .Values.service.name }}
+    spec:
+        selector:
+            app: {{ .Values.services.app }}
+        ports:
+            - protocol: TCP
+            port: {{ .Values.services.port }}
+            targetPort: {{ .Values.service.targetport }}
+
+
+# Multiple YAML Documents:
+  <!-- Inside of one YAML file we can define multiple components and separate them with "---"
+
+    apiVersion:v1
+    kind: Service 
+    metadata:
+        name: {{ .Values.service.name }}
+
+    ---
+    apiVersion: v1
+    kind: secret
+    metadata:
+        name: top-secret-file
+
+  
+
+============================================================================
+
+
+// Example: 
