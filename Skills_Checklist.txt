@@ -36,5 +36,5 @@ Rails
 - [ ] redis
 - [ ] sessions
 - [ ] ruby  ->  koans
-- [ ] yaml 
+- [x] yaml 
 
