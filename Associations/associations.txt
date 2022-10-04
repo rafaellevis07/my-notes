@@ -1,6 +1,5 @@
 // Has Many Through, Models and Queries
-https://github.com/brianspinos777/Programming_cheat_sheets/blob/master/_scripting_languages/Ruby/_rails/__associations.md
-
+https://github.com/brianspinos777/references/tree/main/ruby/rails/rails7/associations
 
 
 
@@ -99,3 +98,9 @@ post1.comment_ids # [9,10]
 
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+
+
+=======================================================================================
+
+
