@@ -1,6 +1,6 @@
 // docs
 https://www.uday.net/add-bootstrap-5-to-an-existing-Rails-7-app
-
+https://youtu.be/PwWHL3RyQgk                   # How to create a navbar with css
 
 
 
