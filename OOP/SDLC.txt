@@ -1,0 +1,25 @@
+Docs:
+https://www.clouddefense.ai/blog/system-development-life-cycle
+https://www.bmc.com/blogs/agile-vs-waterfall/          # important to check before an interview
+
+
+Youtube:
+https://www.youtube.com/watch?v=5b36UTNRmtI
+
+
+
+=======================================================================================
+
+
+SDLC (Software Development Life Cycle)
+
+    - Project plan
+    - Requirements
+    - Analysis
+    - Design
+    - Coding
+    - Testing
+    - Deployment
+
+
+# Names of the phases may vary but it is the same concept.
