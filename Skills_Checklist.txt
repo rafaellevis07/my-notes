@@ -22,13 +22,13 @@ Rails
 - [ ] HTML
 - [ ] Javascript
 - [ ] css 
-- [ ] git 
+- [x] git 
 - [ ] http 
 - [ ] SSL 
 - [ ] AWS - s3
 - [ ] heroku
 - [ ] OOP - Solid - Grasp
-- [ ] SDLC 
+- [x] SDLC 
 - [ ] REGEX 
 - [ ] JS * (next time we meet)
 - [ ] security
