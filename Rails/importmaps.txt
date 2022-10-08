@@ -14,11 +14,11 @@ rails 7 - has importmaps by default !
 
 =====================================================================================================================
 
-$ bin/importmap pin jquery   # add dependency
-$ bin/importmap unpin jquery   # delete dependency
-$ bin/importmap json # list the dependencies ???
+$ bin/importmap pin jquery      # add dependency
+$ bin/importmap unpin jquery    # delete dependency
+$ bin/importmap json            # list the dependencies ???
 
-$ rails assets:precompile  # so we can see the js css in the browser
+$ rails assets:precompile       # so we can see the js css in the browser
 
 
 =====================================================================================================================
