@@ -14,14 +14,14 @@ $ bin/rails db:migrate RAILS_ENV=development
 
 
 
-$ rake db:setup
+$ rake db:setup                   #Only in case database not established yet
 $ rake db:create
 
 
 
 :primary_key, :string, :text, :integer, :bigint, :float, :decimal, :numeric, :datetime, :time, :date, :binary, :blob, :boolean.
 
-:index  ????
+:index
 
 ========================================================================================================================
 

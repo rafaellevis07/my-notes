@@ -10,7 +10,7 @@ Rails
 - [ ] Concerns
 - [x] Forms
 - [ ] Import maps vs esbuild
-- [ ] Migration
+- [x] Migration
 - [ ] Mailer
 - [x] ERB
 - [ ] API
