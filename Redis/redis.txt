@@ -11,17 +11,17 @@
 	$brew install redis
 
 
-#Start redis:
+# Start redis:
 	$redis-server          # Once running, you don't need to start again.
 
 	or
 
 	$ brew services start redis			# Usually use this one
 
-# stop Redis server:
+# Stops Redis server:
 	$ brew services stop redis
 
-# restart Redis server:
+# Restart Redis server:
 	$ brew services restart redis
 
 

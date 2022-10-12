@@ -33,7 +33,7 @@ Rails
 - [ ] JS * (next time we meet)
 - [ ] security
 - [ ] bash
-- [ ] redis
+- [x] redis
 - [ ] sessions
 - [ ] ruby  ->  koans
 - [x] yaml 
