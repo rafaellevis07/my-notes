@@ -6,7 +6,8 @@ https://github.com/brianspinos777/references/tree/main/ruby/rails/rails7/associa
 ===================================================================================================
 
 
-// Initial Set up     (belongs_to)
+((BELONGS_TO))
+// Initial Set up 
 
 $ rails new <app_name>
 $ rails g scaffold Post title:string content:text
@@ -72,6 +73,7 @@ post1.comment_ids # [9,10]
 
 =================================================================================================== views - show (post)
 
+
 // Viewing comments on posts
 
 - TODO: "add comment" button to post
@@ -107,5 +109,3 @@ post1.comment_ids # [9,10]
 
 
 =======================================================================================
-
-
