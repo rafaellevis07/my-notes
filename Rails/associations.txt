@@ -4,7 +4,9 @@ https://github.com/brianspinos777/references/tree/main/ruby/rails/rails7/associa
 
 
 ===================================================================================================
-//Initial Set up
+
+
+// Initial Set up     (belongs_to)
 
 $ rails new <app_name>
 $ rails g scaffold Post title:string content:text
@@ -22,6 +24,7 @@ $ bin/rails db:migrate
 
 ===================================================================================================
 
+
 class Post < ApplicationRecord
 	has_many :comments, dependent: :destroy
 end
@@ -35,6 +38,8 @@ class Comment < ApplicationRecord
 end
 
 ===================================================================================================
+
+
 // To test functionality on local
 
 $ rails console
@@ -42,7 +47,7 @@ $ rails console
 # Type
 post1 = Post.create(title: "first post!", content: "this is the content of the first post")
 post2 = Post.create(title: "second post!", content: "this is the content of the second post")
-post3 = Post.create(title: "third post!!! :)", content: "this is the content of the third post")
+post3 = Post.create(title: "third post!!!", content: "this is the content of the third post")
 
 comment1 = Comment.create(content: "I like the content of this post")
 comment2 = Comment.create(content: "Well, its ok, I guess...")
