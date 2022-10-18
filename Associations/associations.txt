@@ -1,5 +1,6 @@
 // Has Many Through, Models and Queries
 https://github.com/brianspinos777/references/tree/main/ruby/rails/rails7/associations
+https://guides.rubyonrails.org/association_basics.html#belongs-to-association-reference           # All associations Docs
 
 
 

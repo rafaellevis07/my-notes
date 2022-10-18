@@ -1,0 +1,2 @@
+// Docs:
+https://meaganwaller.com/use-a-nested-dynamic-form-with-a-hasmany-through-association-in-rails

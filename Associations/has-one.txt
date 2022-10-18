@@ -1,5 +1,7 @@
 // Docs:
 https://guides.rubyonrails.org/association_basics.html#the-has-one-association
+https://stackoverflow.com/questions/4566901/ruby-on-rails-how-do-i-do-nested-forms-with-a-has-one-relationship
+
 
 
 // Youtube:
@@ -56,15 +58,12 @@ department.manager               # find department by manager
 <%= render @manager %>
 
 
-  <!-- RAFA START -->
-  <hr />
-  <h1>Department</h1>
+<!-- RAFA START -->
+  <h5>Department:</h5>
   <ul>
-    <% @manager.departments.each do |department| %>
-    <li><%= department.title %></li>
-  <% end %>
+    <%= @manager.department.title %>
   </ul>
-  <!-- RAFA END -->
+<!-- RAFA END -->
 
   <div>
   <%= link_to "Edit this manager", edit_manager_path(@manager) %> |
