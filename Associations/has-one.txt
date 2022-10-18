@@ -1,0 +1,74 @@
+// Docs:
+https://guides.rubyonrails.org/association_basics.html#the-has-one-association
+
+
+// Youtube:
+https://www.youtube.com/watch?v=ThhfRTl8uk8
+
+
+
+============================================================================================
+
+
+# We use a has_one when we want to establish a one on one relationship. (every department has one manager, and the manager manages the specific department)
+# It is the same than has_many association, but the model belongs to only one instance to the model defining has_one association
+
+
+// Initial Set up
+
+$ rails new <app_name>
+$ rails g scaffold manager name:string description:text
+$ rails g scaffold department title:string manager:references
+
+$ rails db:migrate
+
+
+
+====================================================================================== models
+
+// manager.rb
+
+class Manager < ApplicationRecord
+    has_one :department                 #singular form
+end
+
+
+department.rb
+class Department < ApplicationRecord
+    belongs_to :manager                 # singular form
+end
+
+
+===================================================================================== rails c 
+
+manager = Manager.create(name: 'Rafael')
+department = Department.create(title: 'Programming Department', manager_id: manager.id)             # Why manager_id?
+
+manager.department               # find manager by department
+department.manager               # find department by manager
+
+
+
+=================================================================================== views
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @manager %>
+
+
+  <!-- RAFA START -->
+  <hr />
+  <h1>Department</h1>
+  <ul>
+    <% @manager.departments.each do |department| %>
+    <li><%= department.title %></li>
+  <% end %>
+  </ul>
+  <!-- RAFA END -->
+
+  <div>
+  <%= link_to "Edit this manager", edit_manager_path(@manager) %> |
+  <%= link_to "Back to managers", managers_path %>
+
+  <%= button_to "Destroy this manager", @manager, method: :delete %>
+</div>
