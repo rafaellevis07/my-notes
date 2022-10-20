@@ -2,6 +2,11 @@ Directions
 
 Rails
 - [ ] Associations 
+    [x] has_many
+    [x] has_one
+    [ ] has_and_belongs_to_many
+    [ ] has_many-Through
+    [ ] polymorphic-associations
 - [ ] Models 
 - [ ] Controller 
 - [ ] View 
