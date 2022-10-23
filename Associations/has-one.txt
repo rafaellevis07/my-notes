@@ -35,7 +35,8 @@ class Manager < ApplicationRecord
 end
 
 
-department.rb
+// department.rb
+
 class Department < ApplicationRecord
     belongs_to :manager                 # singular form
 end

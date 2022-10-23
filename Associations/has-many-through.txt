@@ -1,6 +1,165 @@
 // Docs:
 https://meaganwaller.com/use-a-nested-dynamic-form-with-a-hasmany-through-association-in-rails
+https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association
+https://guides.rubyonrails.org/association_basics.html
 
 
 // Youtube:
 https://www.youtube.com/watch?v=H-Sl4LO4bRA
+
+
+
+====================================================================================
+
+
+// has_many_through Association
+
+# You should use has_many :through if you need validations, callbacks, or extra attributes on the join model.
+# This is a way to establish a many to many relationship on the application.
+<!-- the main difference between the two approaches is that in a has_many :through relationship, 
+the JOIN table has its own model, while a has_and_belongs_to_many relationship has no JOIN model, 
+just a database table. -->
+
+
+// Initial Set up
+
+$ rails new <app_name>
+$ rails g scaffold physician name:string email:string
+$ rails g scaffold patient name:string email:string
+$ rails g scaffold appointment physician:references patient:references
+
+$ rails db:migrate
+
+
+<!-- If there is a need to add any attribute to the appointment table for example -->
+$ rails g migration add_appointment_date_to_appointment appointment_date:date
+    # or
+$ rails g migration add_location_to_appointment location:text
+    # then
+$ rails db:migrate
+
+
+
+====================================================================================== models
+
+
+// physician.rb
+class Physician < ApplicationRecord
+  has_many :appointment                                         # needs to be added
+  has_many :patients, through: :appointment                     # needs to be added
+end
+
+// patient.rb
+class Patient < ApplicationRecord
+  has_many :appointment                                         # needs to be added
+  has_many :physicians, through: :appointment                   # needs to be added
+end
+
+// appointment.rb
+class Appointment < ApplicationRecord
+  belongs_to :physician                                         # added by scaffold command
+  belongs_to :patient                                           # added by scaffold command
+end
+
+
+
+======================================================================================= rails console
+
+$ rails c
+
+$ Patient.create(name: Rafael, email: rafael@example.com)
+$ Patient.create(name: Ester, email: ester@example.com)
+$ Patient.create(name: Nathan, email: nate@example.com)
+$ Patient.create(name: Elise, email: elise@example.com)
+$ Patient.count
+
+$ Physician.create(name: 'Dr. Amy Wok', email: 'amy@example.com)
+$ Physician.create(name: 'Dr. Gerald Gordon', email: 'gg@example.com)
+$ Physician.count
+
+$ Appointment.create(physician_id: 1, patient_id: 1, appointment_date: Date.today + 30.days)
+$ Appointment.create(physician_id: 1, patient_id: 2, appointment_date: Date.today + 30.days)
+$ Appointment.create(physician_id: 2, patient_id: 3, appointment_date: Date.today + 45.days)
+$ Appointment.create(physician_id: 2, patient_id: 4, appointment_date: Date.today + 45.days)
+
+$ physician = Physician.find(1)
+$ physician.patients
+
+$ patient = Patient.find(3)
+$ patient.physicians
+
+
+
+================================================================================== views
+
+
+// patient
+
+<b>Hello <%=@patient.name %>! </b><br>
+
+Your physician's name is:
+<% @patient.physicians.each do |physician| %>
+    <b><%= physician.name %></b>
+  <% end %>
+<br>
+
+<%= @appointment_date %>
+
+Your next appointment is: 
+<% @patient.appointments.each do |appointment|%>
+  <%= appointment.appointment_date %>
+<%end%>
+<br>
+
+
+// physician
+
+<b>Hello <%=@physician.name %>! </b><br>
+
+Your physician's name is: <br>
+<% @physician.patients.each do |patient| %>
+    <b><%= patient.name%></b><br>
+  <% end %>
+<br>
+
+Your next appointment is: 
+<% @physician.appointments.each do |appointment|%>
+  <%= appointment.appointment_date %>
+<% end %>
+<br>
+
+
+// appointment
+<b><%= @appointment.appointment_date %></b> <br>
+
+Next Appointments: <br>
+
+Physician: <%=@appointment.physician.name%> on <%= @appointment.appointment_date %> with the Patient: <%=@appointment.patient.name%>
+
+
+
+====================================================================================== forms
+
+
+# It is better to format the forms on appointment to dropdowns, easier to visualize.
+
+app > views > appointments > _form.html.erb
+ <div>
+    Physician:
+    <%= form.collection_select :physician_id, Physician.order(:name), :id, :name %>
+  </div>
+
+  <div>
+    Patient:
+    <%= form.collection_select :patient_id, Patient.order(:name), :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
