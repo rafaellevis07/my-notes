@@ -13,7 +13,7 @@ Rails
 - [ ] Hotwire  
 - [ ] Rspec 
 - [ ] Concerns
-- [x] Forms
+- [x] Forms - Forms examples
 - [ ] Import maps vs esbuild
 - [x] Migration
 - [ ] Mailer
