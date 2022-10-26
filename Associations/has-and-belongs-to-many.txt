@@ -3,7 +3,7 @@ https://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-ma
 https://api.rubyonrails.org/v7.0.4/classes/ActiveRecord/Associations/ClassMethods.html#method-i-has_and_belongs_to_many
 
 // Youtube:
-
+https://www.youtube.com/watch?v=4yXcBKih7dA
 
 
 ================================================================================ Explanation
