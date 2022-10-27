@@ -10,7 +10,7 @@ https://www.youtube.com/watch?v=4yXcBKih7dA
 
 
 # A has_and_belongs_to_many association creates a direct many-to-many connection with another model, 
-with no intervening model.
+with no intervening model. But requires a join table to support the association
 
 <!-- The simplest rule of thumb is that you should set up a has_many :through relationship 
     if you need to work with the relationship model as an independent entity. 
@@ -22,7 +22,8 @@ with no intervening model.
     or extra attributes on the join model. You should use has_and_belongs_to when you 
     just want to connect the two models directly -->
 
-
+# For example a student can enroll to many courses, and a course can have multiple students. (Udemy)
+# You must generate the join table with a migration independently of a model.
 
 ====================================================================================
 
@@ -30,7 +31,7 @@ with no intervening model.
 // Initial Set up
 
 $ rails new <app_name>
-$ rails g scaffold students name:string email:string
-$ rails g scaffold appointment physician:references patient:references
+$ rails g scaffold students first_name:string last_name:string email:string
+$ rails g scaffold course name:string description:text
 
 $ rails db:migrate
