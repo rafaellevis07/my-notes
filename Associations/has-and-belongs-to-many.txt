@@ -31,7 +31,97 @@ with no intervening model. But requires a join table to support the association
 // Initial Set up
 
 $ rails new <app_name>
-$ rails g scaffold students first_name:string last_name:string email:string
+$ rails g scaffold student first_name:string last_name:string email:string
 $ rails g scaffold course name:string description:text
 
 $ rails db:migrate
+
+
+
+==================================================================================== models
+
+
+course.rb
+class Course < ApplicationRecord
+    has_and_belongs_to_many :students
+end
+
+
+student.rb
+class Student < ApplicationRecord
+    has_and_belongs_to_many :courses
+end
+
+
+
+================================================================================ Join table Migration
+
+
+# Then we create a joint table with a migration
+$ rails generate migration create_courses_students_join_table
+
+
+20221027022721_create_courses_students_join_table.rb
+
+class CreateCoursesStudentsJoinTable < ActiveRecord::Migration[7.0]
+    def change
+        create_join_table :courses, :students
+    end
+end
+
+
+$ rails db:migrate
+
+
+# Now we have a join table of the two models in our schema. It will only contain student_id and course_id
+<!-- If the table wasn't name in lexical order, the name of the table should be added to the models 
+     Ex.has_and_belongs_to_many :students, join_table: 'students_courses' -->
+
+
+======================================================================================= rails console
+
+
+$ course1 = Course.create(name: "Ruby on Rails", description: "Full-Stack")
+$ course2 = Course.create(name: "UI UX", description: "User Interface and User Experience")
+$ course3 = Course.create(name: "BSSM", description: "School of the Supernatural")
+$ course4 = Course.create(name: "Pre School", description: "School for kids")
+
+$ student1 = Student.create(first_name: "Rafael", last_name: "Garcia", email: "rafael@example.com")
+$ student2 = Student.create(first_name: "Ester", last_name: "Garcia", email: "ester@example.com")
+$ student3 = Student.create(first_name: "Nate", last_name: "Garcia", email: "nate@example.com")
+$ student4 = Student.create(first_name: "Elise", last_name: "Garcia", email: "elise@example.com")
+
+
+# Adding courses to students
+    $ student1.courses << course1
+    $ student1.courses << course3
+    $ student1.courses
+        // or
+    $ student2.courses << course2 << course3
+    $ student2.courses
+
+
+# Adding students to courses
+    course4.students << student3 << student4
+
+
+
+======================================================================================== views
+
+
+app > views > students > show.html.erb
+
+Hello! <b><%= @student.first_name %></b><br>
+You are enrolled to the following courses: <br>
+<% @student.courses.each do |course| %>
+ <ul><li><%= course.name %> <br></li></ul>
+<% end %>
+
+
+app > views > courses > show.html.erb
+
+Hello! <b><%= @course.name %></b><br>
+You are enrolled to the following courses: <br>
+<% @course.students.each do |student| %>
+ <ul><li><%= "#{student.first_name} #{student.last_name}" %> <br></li></ul>
+<% end %>
