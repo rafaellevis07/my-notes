@@ -6,6 +6,7 @@ https://api.rubyonrails.org/v7.0.4/classes/ActiveRecord/Associations/ClassMethod
 https://www.youtube.com/watch?v=4yXcBKih7dA
 
 
+
 ================================================================================ Explanation
 
 
@@ -24,6 +25,8 @@ with no intervening model. But requires a join table to support the association
 
 # For example a student can enroll to many courses, and a course can have multiple students. (Udemy)
 # You must generate the join table with a migration independently of a model.
+
+
 
 ====================================================================================
 
@@ -78,6 +81,7 @@ $ rails db:migrate
      Ex.has_and_belongs_to_many :students, join_table: 'students_courses' -->
 
 
+
 ======================================================================================= rails console
 
 
@@ -120,8 +124,8 @@ You are enrolled to the following courses: <br>
 
 app > views > courses > show.html.erb
 
-Hello! <b><%= @course.name %></b><br>
-You are enrolled to the following courses: <br>
+Course: <b><%= @course.name %></b><br>
+These are the students enrolled in this course: <br>
 <% @course.students.each do |student| %>
  <ul><li><%= "#{student.first_name} #{student.last_name}" %> <br></li></ul>
 <% end %>
