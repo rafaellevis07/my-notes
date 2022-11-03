@@ -1,3 +1,14 @@
+// Docs
+http://www.tutorialspoint.com/postgresql/
+https://postgresapp.com/
+https://medium.com/geekculture/postgresql-rails-and-macos-16248ddcc8ba
+https://wiki.postgresql.org/wiki/Homebrew
+
+
+
+==================================================================================
+
+
 Update Gemfile and .ruby-version to ruby 3.1.2
 bundle install
 
@@ -10,27 +21,61 @@ bundle install
 
 ================================================================================ install postgresql Mac app:
 
-https://postgresapp.com/
 
-$ brew install postgresql => Installs postgresql
+$ brew install postgresql           # Installs postgresql
 
-$ brew services start postgresql => # or "brew services run postgresql" to have it not restart at boot time and start services
+$ brew services start postgresql    # or "brew services run postgresql" to have it not restart at boot time and start services
 
-$ brew services stop postgresql => stops PostgreSQL
+$ brew services stop postgresql     # stops PostgreSQL
 
-$ rails assets:precompile => compiles the asset manifests and other files in the pipeline.
+$ rails assets:precompile           #compiles the asset manifests and other files in the pipeline.
 
-$ rails db:create => Creates DataBase
+$ rails db:create                   # Creates DataBase
 
-$ rails db:migrate => manipulates migrations and your schema
+$ rails db:migrate                  # manipulates migrations and your schema
 
-$ brew services listshows the postgresql's status is 'error'
+$ brew services list                # shows the postgresql's status is 'error'
 
 
-https://medium.com/geekculture/postgresql-rails-and-macos-16248ddcc8ba
-https://wiki.postgresql.org/wiki/Homebrew
 
 ================================================================================ rails app from sqlite to postgresql
 
 $ rails db:system:change --to=postgresql
 $ bundle
+
+
+
+=============================================================================== 
+
+$ rails db
+
+# drop a column
+$ ALTER TABLE <table-name> DROP COLUMN <column_name>;
+
+# drop a table
+$ DROP TABLE <table-name>;
+
+# list databases
+$ \l
+
+# list, discribe tables
+$ \d
+
+# list, discribe a table
+$ \d <table-name>
+DROP TABLE items;
+
+CREATE TABLE items(
+    id SERIAL PRIMARY KEY,
+    text VARCHAR(255) NOT NULL,
+    is_done boolean NOT NULL
+);
+
+
+SELECT * FROM items;
+
+INSERT INTO items (text, is_done) VALUES ('wash car again', false);
+INSERT INTO items (text, is_done) VALUES ('wash dishes', false);
+INSERT INTO items (text, is_done) VALUES ('wash house', false);
+
+UPDATE users SET password_digest='$2a$10$kuM1Tuxbu5cfNkgeBAX4yupgC8dMQkQVXUhtwTsj1d9gPnJxHdF7q' WHERE id = 1;

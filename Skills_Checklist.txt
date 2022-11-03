@@ -22,16 +22,17 @@ Rails
 - [x] Devise
 
 
-- [ ] Scrum
-- [ ] Database - SQL e postgresql
+- [x] Scrum
+- [x] Database - SQL e postgresql
 - [ ] HTML
 - [ ] Javascript
 - [ ] css 
 - [x] git 
 - [ ] http 
-- [ ] SSL 
+- [x] SSL 
 - [ ] AWS - s3
 - [ ] heroku
+- [x] Brew
 - [ ] OOP - Solid - Grasp
 - [x] SDLC 
 - [ ] REGEX 

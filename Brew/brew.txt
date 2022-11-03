@@ -1,0 +1,14 @@
+// Docs
+https://mac.install.guide/ruby/9.html
+https://github.com/Homebrew/brew/issues/5438
+
+
+
+======================================================================================
+
+
+$ brew install ruby
+$ brew info ruby
+$ brew uninstall ruby --ignore-dependencies # not tested
+$ brew services list
+$ brew uninstall ruby
