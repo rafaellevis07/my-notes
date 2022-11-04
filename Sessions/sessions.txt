@@ -1,4 +1,4 @@
-//Docss
+//Docs
     https://www.justinweiss.com/articles/how-rails-sessions-work/
 
 
