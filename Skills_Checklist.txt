@@ -16,7 +16,7 @@ Rails
 - [x] Forms - Forms examples
 - [ ] Import maps vs esbuild
 - [x] Migration
-- [ ] Mailer
+- [x] Mailer
 - [x] ERB
 - [ ] API
 - [x] Devise
@@ -31,16 +31,15 @@ Rails
 - [ ] http 
 - [x] SSL 
 - [ ] AWS - s3
-- [ ] heroku
+- [x] heroku
 - [x] Brew
 - [ ] OOP - Solid - Grasp
 - [x] SDLC 
 - [ ] REGEX 
-- [ ] JS * (next time we meet)
-- [ ] security
+- [x] security
 - [ ] bash
 - [x] redis
-- [ ] sessions
+- [x] sessions
 - [ ] ruby  ->  koans
 - [x] yaml 
 
