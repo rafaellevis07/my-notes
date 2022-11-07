@@ -2,6 +2,7 @@
 https://meaganwaller.com/use-a-nested-dynamic-form-with-a-hasmany-through-association-in-rails
 https://guides.rubyonrails.org/association_basics.html#the-has-many-through-association
 https://guides.rubyonrails.org/association_basics.html
+https://learn.co/lessons/has-many-through-forms-rails
 
 
 // Youtube:
