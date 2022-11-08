@@ -1,9 +1,12 @@
 // Docs
 https://aws.amazon.com/s3/getting-started/
+https://aws.amazon.com/documentation-overview//?nc2=h_ql_doc_do     # Documentation
+
 
 // Youtube
-https://www.youtube.com/watch?v=L3dYocCSU-E                 # Basics for beginners (needs review)
-https://www.youtube.com/watch?v=OWBWXOcx1rU                 # AWS with Rails Active Storage
+https://www.youtube.com/watch?v=L3dYocCSU-E                         # Basics for beginners (needs review)
+https://www.youtube.com/watch?v=OWBWXOcx1rU                         # AWS with Rails Active Storage
+
 
 
 ============================================================================================== Explanation
