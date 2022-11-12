@@ -1,6 +1,6 @@
 // Docs
 https://aws.amazon.com/s3/getting-started/
-https://aws.amazon.com/documentation-overview//?nc2=h_ql_doc_do     # Documentation
+https://aws.amazon.com/documentation-overview/s3/                   # Documentation
 
 
 // Youtube
