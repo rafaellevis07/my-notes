@@ -14,7 +14,7 @@ Rails
 - [ ] Rspec 
 - [ ] Concerns
 - [x] Forms - Forms examples
-- [ ] Import maps vs esbuild
+- [x] Import maps vs esbuild
 - [x] Migration
 - [x] Mailer
 - [x] ERB

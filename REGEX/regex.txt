@@ -1,4 +1,11 @@
-Regex quick reference
+// Docs
+https://rubular.com/
+
+
+
+================================================================================== Regex quick reference
+
+
 [abc]	A single character of: a, b, or c
 [^abc]	Any single character except: a, b, or c
 [a-z]	Any single character in the range a-z
@@ -23,3 +30,9 @@ a+	One or more of a
 a{3}	Exactly 3 of a
 a{3,}	3 or more of a
 a{3,6}	Between 3 and 6 of a
+
+
+
+==================================================================================
+
+
