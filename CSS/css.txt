@@ -7,7 +7,7 @@ https://www.w3schools.com/css/
 
 
 Must know
-- Box model
+[x] Box model
 - Flex / Flexbox
 - Grid
 - Selectors
