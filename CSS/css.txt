@@ -1,5 +1,7 @@
 // Docs
 https://www.w3schools.com/css/
+https://cssbattle.dev/                  # CSS Game
+https://www.youtube.com/watch?v=ZPzCNbLVvxE&list=PL6x5Q-Sj_BlZIcJhkaPmZ1odahdUp_jJT         # Channel help
 
 
 
