@@ -60,7 +60,57 @@ The flex container properties are:
 
 
 • flex-flow
-    
+    The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+
+    Example
+    .flex-container {
+     display: flex;
+     flex-flow: row wrap;
+    }
+
+
 • justify-content
+    The justify-content property is used to align the flex items
+    Example
+    The center value aligns the flex items at the center of the container:
+
+    .flex-container {
+     display: flex;
+     justify-content: center;
+    }
+
+    # justify-content: flex-start => beginning of the container
+    # justify-content: flex-end => end of the container
+    # justify-content: space-around =>  space before, between, and after the lines
+    # justify-content: space-between =>  space between the lines (not at the margins)
+
+
 • align-items
+    The align-items property is used to align the flex items.
+    Example
+    The center value aligns the flex items in the middle of the container:
+
+    .flex-container {
+     display: flex;
+     height: 200px;
+     align-items: center;
+    }
+
+# The stretch value stretches the flex items to fill the container (this is default)
+# The baseline value aligns the flex items such as their baselines aligns:
+
+
 • align-content
+
+
+• Perfect Centering
+    In the following example we will solve a very common style problem: perfect centering.
+    SOLUTION: Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered:
+
+    Example
+    .flex-container {
+     display: flex;
+     height: 300px;
+     justify-content: center;
+     align-items: center;
+    } 
