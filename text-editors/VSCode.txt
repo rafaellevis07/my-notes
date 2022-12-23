@@ -1,0 +1,68 @@
+
+
+VSCode
+
+================================================================================================== 
+
+// instal `$ code` commandline:
+// from vscode editor:
+// Now open the Command Palette (SHIFT + COMMAND + P) and type "shell command" to find the "Shell Command: Install 'code' command in PATH", click it, that is it!
+
+
+// indentetaion for files/folders
+Go to Code > Preference > Settings and choose:
+// search for:
+"Workbench › Tree: Indent" // set to 32 ? // Controls tree indentation in pixels.
+// Not sure how to access this:
+or (in your settings.json enter this directly)
+ "workbench.tree.indent": 32
+
+
+================================================================================================== plugins:
+"Reactjs code snippets"
+
+"ES7 React snippets extension" // to use "rafce" template
+    - seems that the actual plugin name is: "ES7+ React/Redux/React-Native snippets"
+
+"Prettier - Code formatter"
+     Command + Shift + P (Mac)
+     "Preferences: Open User Settings" 
+     Search for "format on save" setting and check the checkbox.
+     Search for "default formatter" and set it to prettier
+     youtube video: https://www.youtube.com/watch?v=__eiQumLOEo
+     
+"Mithril Emmet"
+    Command + Shift + P (Mac)
+    "Preferences: Open User Settings" 
+    search for "emmet include languages"
+    - add item:
+        "javascript" -> "javascriptreact"
+     
+"Error Lens"
+
+"ESLint"
+
+"GitLens — Git supercharged"
+
+"Prettier ESLint"
+
+"Todo Tree"
+
+================================================================================================== settings.json
+
+// Edit settings.json in VScode:
+// Command + Shift + P (Mac)
+// type in: "Preferences: Open User Settings (JSON)"
+//    -> COMMAND + , // settings.json on VScode // not working for .json
+
+================================================================================================== Reload VsCode
+
+- Command + Shift + P (Mac)
+- search for: "Reload Window"
+    - click it
+
+- then at the bottom right corner, click to update
+    - all screens will disappear, but will be back again, the same as before
+        - there is no loss of files, go ahead!
+
+==================================================================================================
