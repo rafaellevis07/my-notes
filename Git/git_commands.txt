@@ -12,14 +12,17 @@ Go to “+” >> new repository >> Name the repository specifically >> set to pu
    Ex. git clone https://github.com/rafaellevis07/Study-Jun-2022-Blog.git
 	
 	$ ls                                      # List items inside directory
-	$ cd <repository_name>			  # Change to the repository that was cloned
-	$ git status				  # Check git status. If there is any changes to push
-	$ git add . 	/ git add -A		  # Add new or changed files in your working directory to the Git staging area.
-	$ git add <file_name> 				  # Add determined file
-  	$ git commit -m "<commit_message>"	  # Describe what was created or changes
-	$ git log				  # log of commit messages
-	$ git reset --hard HEAD~1		  # Delete last commit. (Without number 1 deletes all recent changes)
- 	$ git push				  # Upload the commits to Github
+	$ cd <repository_name>			  		  # Change to the repository that was cloned
+	$ git status				  			  # Check git status. If there is any changes to push
+	$ git add . 	/ git add -A		 	  # Add new or changed files in your working directory to the Git staging area.
+	$ git add <file_name> 				 	  # Add determined file
+  	$ git commit -m "<commit_message>"	 	  # Describe what was created or changes
+	$ git log				 				  # log of commit messages
+	$ git reset --hard HEAD~1		  		  # Delete last commit. (Without number 1 deletes all recent changes)
+ 	$ git push				  		  		  # Upload the commits to Github
+	$ git reset								  # unstage all changes
+	$ git reset	<file>						  # unstage specific file
+
  
 
 
