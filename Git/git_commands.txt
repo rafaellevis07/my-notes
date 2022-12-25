@@ -22,7 +22,7 @@ Go to “+” >> new repository >> Name the repository specifically >> set to pu
  	$ git push				  		  		  # Upload the commits to Github
 	$ git reset								  # unstage all changes
 	$ git reset	<file>						  # unstage specific file
-
+	$ git rm --cached <file>				  # Ignore file previously tracked by git
  
 
 
