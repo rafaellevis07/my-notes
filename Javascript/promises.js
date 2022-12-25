@@ -1,0 +1,47 @@
+/* 
+Docs:
+
+
+Youtube:
+https://www.youtube.com/watch?v=PgZ9npYJZzU
+
+
+
+================================================ Promises */
+
+/*
+
+Promise in javascript is a class that can be invoked that
+takes a function which can have two arguments to it, resolve and reject, 
+and inside of the function we write the logic that will define the promise.
+(most of times we will be dealing with promises that are returned and we wont be creating them as much.)
+
+
+Resolve is a function that we call when we want success to happen (condition is true)
+Reject is a function that is called when there is failure (condition is false)
+
+*/
+
+const event = new Promise((resolve, reject) => {
+  var name = "John";
+  if (name == "Rafael") {
+    resolve(name);
+  } else {
+    reject("Name didn't match! Try again.");
+  }
+});
+
+/* 
+.then() is called if we're resolve and .catch() is called if we're reject
+We can put logic inside of the methods called.
+*/
+event
+  .then((name) => {
+    console.log(name);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .finally(() => {
+    console.log("PROMISE FINISHED");
+  });

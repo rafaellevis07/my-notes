@@ -3,8 +3,12 @@ Docs:
 
 
 Youtube:
-https://www.youtube.com/watch?v=m55PTVUrlnA&list=PLDBdmkfPal-zzfEv7GnbvvTiHmuYSixtt&index=2&t=19s
+https://www.youtube.com/watch?v=PgZ9npYJZzU
 
 
 
 ================================================ Async */
+var name = "Rafael";
+console.log(name);
+name = "John";
+console.log(name);
