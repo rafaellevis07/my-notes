@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=m55PTVUrlnA&list=PLDBdmkfPal-zzfEv7GnbvvTiHmuYSi
 
 
 
-================================================ Map */
+================================================ Map and Filter */
 
 /*
 .map()      =>  it will return a modified array
