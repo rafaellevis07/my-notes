@@ -3,7 +3,7 @@ const myFunc = () => {};
 
 const myFunc2 = (name, age) => {
   console.log(name + " " + age);
-  return "RAFA GAY";
+  return "RAFA";
 };
 
 let x = myFunc2("rafa", 33);

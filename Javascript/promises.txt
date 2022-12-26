@@ -31,10 +31,13 @@ const event = new Promise((resolve, reject) => {
   }
 });
 
+
 /* 
 .then() is called if we're resolve and .catch() is called if we're reject
 We can put logic inside of the methods called.
 */
+
+
 event
   .then((name) => {
     console.log(name);

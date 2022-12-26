@@ -9,10 +9,10 @@ https://www.youtube.com/watch?v=m55PTVUrlnA&list=PLDBdmkfPal-zzfEv7GnbvvTiHmuYSi
 
 ================================================ Ternary Operators */
 
-/*This was created to minimize the lines of code in React specially
-
-
-Instead of a if statement */
+/
+*This was created to minimize the lines of code in React specially
+Instead of a if statement 
+*/
 
 let age = 10;
 let name = "Pedro";
@@ -34,7 +34,8 @@ const Componet = () => {
   return age1 > 10 ? <div> Pedro </div> : <div> Jack </div>;
 };
 
-/* Ternary operators
+/* 
+  Ternary operators
     • And = &&
     • Or = || 
     • if/else operator = ? :

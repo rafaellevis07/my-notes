@@ -9,6 +9,9 @@ https://www.youtube.com/watch?v=m55PTVUrlnA&list=PLDBdmkfPal-zzfEv7GnbvvTiHmuYSi
 
 ================================================ Objects */
 
+
+// Consider the object 
+
 const person = {
   name: "Rafael",
   age: 33,
@@ -19,14 +22,20 @@ const name1 = person.name;
 const age1 = person.age;
 const isMarried1 = person.isMarried;
 
-/* If we destructure the object we can do all these lines in one line.
+
+/* 
+If we destructure the object we can do all these lines in one line.
 This is very useful in React
 */
 
+
 const { name, age, isMarried } = person;
 
-/* If I want to change one single specific value of an object, 
-I use spread operator "..." and substitute the value desired.*/
+
+/* 
+If I want to change one single specific value of an object, 
+I use spread operator "..." and substitute the value desired.
+*/
 
 const person2 = { ...person, name: "Jack" };
 
