@@ -1,1 +1,105 @@
 // Docs
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+
+Youtube:
+https://www.youtube.com/watch?v=cuEtnrL9-H0
+
+
+
+
+================================================================================================ Fetch
+
+
+/*
+    • The Fetch API provides a JavaScript interface for accessing and manipulating parts of the protocol, 
+    such as requests and responses. It also provides a global fetch() method that provides an easy, logical way 
+    to fetch resources asynchronously across the network.
+
+    • The way fetch API works is you pass an url as first property and then a second property (which is optional)
+    in case we want to pass a POST request instead of a GET request for example. (POST example after GET example)
+
+    • Fetch is promise based
+    
+*/
+
+// Example
+    fetch("https://regres.in/api/users"
+
+
+
+//---------------------------------------------------------------------------------------------- GET
+
+
+const url = "https://jsonplaceholder.typicode.com/users/1"
+fetch(url, {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+}).then(res => res.json())
+.then(data => {
+    console.log(data)
+}).catch(error => {
+    console.log(error)
+})
+
+
+
+//---------------------------------------------------------------------------------------------- POST
+
+
+const url = "https://jsonplaceholder.typicode.com/users"
+let data = {
+    name: 'aaa',
+    lname: 'bbb'
+};
+
+fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+}).then(res => res.json())
+.then(data => {
+    console.log(data)
+}).catch(error => {
+    console.log(error)
+})
+
+//----------------------------------------------------------------------------------------------
+// fu (MHB) TJ TD C
+fetch(url, {
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify(data)
+}).then(res => res.json())
+.then(data => {
+    console.log(data)
+//   doSomething(data);
+}).catch(error => {
+    console.log(error)
+})
+
+
+
+//---------------------------------------------------------------------------------------------- APIs
+
+
+https://jsonplaceholder.typicode.com/users/1
+
+
+https://www.anapioficeandfire.com/
+https://www.anapioficeandfire.com/api/books/1
+https://www.anapioficeandfire.com/api/characters/1
+
+
+https://reqres.in/ - there are tokens here also! good for testing login
+https://reqres.in/api/users/1
+
+
+
+//----------------------------------------------------------------------------------------------
