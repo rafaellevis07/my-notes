@@ -1,6 +1,8 @@
 /* 
 
 Docs:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await
 
 
 Youtube:
@@ -9,3 +11,51 @@ https://www.youtube.com/watch?v=PgZ9npYJZzU
 
 
 ================================================ Async */
+
+/*
+
+    • The async function declaration declares an async function where the await keyword is permitted within the function body. 
+    The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, 
+    avoiding the need to explicitly configure promise chains.
+
+
+    • Async functions can contain zero or more await expressions. 
+    Await expressions make promise-returning functions behave as though they're synchronous by 
+    suspending execution until the returned promise is fulfilled or rejected.
+
+    • The purpose of async/await is to simplify the syntax necessary to consume promise-based APIs.
+*/
+
+
+// Syntax
+
+    async function name(param0) {
+    statements
+    }
+    async function name(param0, param1) {
+    statements
+    }
+    async function name(param0, param1, /* … ,*/ paramN) {
+    statements
+    }
+
+
+// Example
+
+    function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+        resolve('resolved');
+        }, 2000);
+    });
+    }
+
+    async function asyncCall() {
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+    // expected output: "resolved"
+    }
+
+    asyncCall();
+

@@ -1,6 +1,12 @@
-// Vanilla javascript
+/*
+Vanilla javascript
 
-//========================================================================================================
+Docs:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+
+
+======================================================================================================== */
 
 <body>
   <script src="./script.js"></script>
@@ -84,6 +90,7 @@ fruits.shift(); // removes first item from array, and returns it
 fruits.unshift("Lemon"); // adds item to the beginning of the array, returns the new array length
 const arr4 = arr1.concat(arr2, arr3, "item");
 fruits.splice(2, 0, "Lemon", "Kiwi"); // add items to index 2, and deletes 0 items
+
 x = [1, 2, 3, 4, 5];
 x.splice(2, 0, 2000, 3000); // returns []
 x; //  [1, 2, 2000, 3000, 3, 4, 5]
