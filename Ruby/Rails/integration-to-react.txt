@@ -1,0 +1,25 @@
+To build a separate front-end application using React and use Rails as a back-end API, you can follow these steps:
+
+1- Create a new Rails application: Use the rails new command to create a new Rails application. 
+This will generate a new project directory with the basic structure and files you need to get started.
+
+2- Set up the database: Use the rails db:create command to create a new database for your application. 
+You may also need to configure the database connection settings in the config/database.yml file.
+
+3- Define your models and routes: Use Rails' Active Record ORM to define your application's models and their relationships, 
+and use the Rails router to define the routes for your API endpoints.
+
+4- Write your controllers: Use Rails' controllers to handle requests to your API endpoints and to interact with the database.
+
+5- Test your API: Use a tool like Postman or curl to test your API endpoints and make sure they are working as expected.
+
+6- Create a new React application: Use the create-react-app command to create a new React application. 
+This will generate a new project directory with the basic structure and files you need to get started.
+
+7- Integrate with the Rails API: In your React application, 
+use the fetch function or a library like Axios to make HTTP requests to your Rails API endpoints.
+
+8- Build your UI: Use React components to build the user interface for your application.
+
+9- Deploy your applications: Deploy your Rails API to a hosting platform like Heroku, 
+and deploy your React front-end to a static hosting platform like GitHub Pages or AWS S3.

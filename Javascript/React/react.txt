@@ -1,10 +1,12 @@
 REACT.JS
+Docs: 
+https://github.com/facebook/react/tree/main/packages/react-devtools#the-react-tab-doesnt-show-up                // React Devtools
 
 ================================================================================================================ new react app:
 
-$ npx create-react-app@latest foo-bar
+$ npx create-react-app@latest foo-bar                   // Creates a new project with name foo-bar
 $ cd foo-bar
-$ npm start
+$ npm start                                             // Runs the project
 // Ctrl+C Stops terminal
 
 $ npm install axios uid firebase react-router-dom@5 @reduxjs/toolkit react-redux
@@ -13,3 +15,4 @@ $ npm install axios uid firebase react-router-dom@5 @reduxjs/toolkit react-redux
 $  mkdir -p src/main/components/ src/test/components/
 
 ================================================================================================================
+$ npm i react-icons                                     // Installs react icons. (allows you to use multiple icon libraries)

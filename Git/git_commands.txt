@@ -10,6 +10,9 @@ Go to “+” >> new repository >> Name the repository specifically >> set to pu
  	$ cd <directory_name>            	  # Change to the directory created. cd PROJECTS
 	$ git clone <github_repository_link>      # Clone repository to local
    Ex. git clone https://github.com/rafaellevis07/Study-Jun-2022-Blog.git
+
+   // or
+	$ git init								  # It will  creates a new Git repository locally
 	
 	$ ls                                      # List items inside directory
 	$ cd <repository_name>			  		  # Change to the repository that was cloned
