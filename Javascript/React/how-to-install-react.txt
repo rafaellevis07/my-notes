@@ -1,0 +1,11 @@
+Docs:
+https://www.knowledgehut.com/blog/web-development/install-react-on-mac
+https://nodejs.org/en/download/
+
+
+
+==============================================================================================
+
+To use react it is necessary to instal Node.js
+
+The first link on the page is a very good tutorial of how install and use react.
