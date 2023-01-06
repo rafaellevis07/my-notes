@@ -1,0 +1,130 @@
+Docs: 
+https://reactjs.org/docs/components-and-props.html
+https://www.freecodecamp.org/news/how-to-use-props-in-react/
+
+
+Youtube:
+https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=5751s                     # 27:18 - Component Props
+
+
+
+=================================================================================== Definition
+
+
+/*
+
+We use props in React to pass data from one component to another (from a parent component to a child component(s)). 
+Props is just a shorter way of saying properties. They are useful when you want the flow of data in your app to be dynamic, 
+This means that the data in the component will not be static. So for every other component using that logic, 
+its data can be modified to fit the requirements.
+
+*/
+
+
+
+=================================================================================== How to use props without destructing
+
+
+// Tool.js
+    function Tool(props) {
+    const name = props.name;
+    const tool = props.tool;
+        return (
+        <div>
+            <h1>My name is {name}.</h1>
+            <p>My favorite design tool is {tool}.</p>
+        </div>
+        );
+    }
+
+    export default Tool
+
+/*
+1 - Pass props as argument
+2 - Declare props variable(s)                                       // You could go ahead and pass the props directly into 
+                                                                       your template: <h1> My name is {props.name} </h1>   
+3 - Use variable(s) in JSX template                                              
+4 - Pass data to props in the App component
+5- Pass in the data like attributes:
+*/
+
+//App.js
+    import Tool from "./Tool"
+
+    function App() {
+    return (
+        <div className="App">
+        <Tool name="Rafael
+    " tool="VSCode"/>
+        </div>
+    )
+    }
+
+    export default App
+
+
+// Displayed on the browser
+>> 
+   My name is Rafael.   
+   My favorite design tool is Figma.
+
+
+
+=================================================================================== How to use props with destructing (easier)
+
+
+function Tool({name, tool}) {
+  
+    return (
+      <div>
+        <h1>My name is {name}.</h1>
+        <p>My favorite design tool is {tool}.</p>
+      </div>
+    );
+}
+
+export default Tool
+
+/*
+
+Instead of passing props as an argument, we destructured and passed in the variables as the function's argument.
+Everything else remains the same.
+
+Note that you are not limited to just single variables as your props data – you can equally pass in functions and even data from objects.
+
+*/
+
+
+
+=================================================================================== Default Values for props
+
+
+/*
+
+If you do not want your props data to be empty when you create them, you can pass in a default value. 
+Just at the end of the code before the component was exported, we declared default values for our props. 
+To do that, we started with the component's name and a dot/period connecting it with defaultProps which is built in 
+when you create a React app.
+
+With this, wherever the components are imported, those values will be the initial values instead of being blank
+
+*/
+
+
+// Tool.js
+function Tool({name, tool}) {
+
+    return (
+      <div>
+        <h1>My name is {name}.</h1>
+        <p>My favorite design tool is {tool}.</p>
+      </div>
+    );
+
+  }
+  
+  Tool.defaultProps = {
+    name: "Programmer",
+    tool: "Atom"
+  }
+export default Tool

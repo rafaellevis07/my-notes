@@ -3,7 +3,7 @@ https://reactjs.org/docs/react-component.html
 
 
 Youtube:
-https://www.youtube.com/watch?v=PMPUvInqtl4
+https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=5751s                     # 23:49 - Creating a component
 
 
 
@@ -19,5 +19,57 @@ and return React elements describing what should appear on the screen.
 */
 
 
+// Always put components inside the folder called "components" for organization
+// The file name should have the uppercase first letter by convention
+// All React components must act like pure functions with respect to their props.
 
-===================================================================================
+
+
+=================================================================================== Syntax for Arrow function Component
+
+
+// Type "rafce" for snippet component with the arrow function
+// Delete "import React from 'react'"
+
+    const Example = () => {
+    return (
+        <div>
+        
+        </div>
+    )
+    }
+
+    export default Example
+
+
+
+=================================================================================== Tested Example
+
+
+    const Header = () => {
+    return (
+        <header>
+            <h1> Task Tracker </h1>
+        </header>
+    )
+    }
+
+    export default Header
+
+
+// After creating component, tags and logic, import the component to App.js
+
+
+// App.js
+
+    import Header from "./components/Header"
+
+    function App() {
+        return (
+            <div className='container'>
+                <Header />
+            </div>
+        )
+    }
+
+    export default App
