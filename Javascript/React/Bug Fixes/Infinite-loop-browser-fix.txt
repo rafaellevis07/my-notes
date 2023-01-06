@@ -1,3 +1,10 @@
+Docs:
+https://dev.to/ajones_codes/til-how-to-pause-an-infinite-javascript-loop-in-chrome-53gm
+
+
+
+===================================================================================== Fix
+
 Infinite loop in a React component
 
 You can stop infinite loops in chrome without force-closing the program in two ways:
