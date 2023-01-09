@@ -49,11 +49,11 @@ class Person {
   }
 }
 
-const brian = new Person("brian", "spinos");
-// brian.#privateField === 42;   // Syntax error
+const rafael = new Person("rafael", "garcia");
+// rafael.#privateField === 42;   // Syntax error
 
-brian.greeting();
-console.table(brian);
+rafael.greeting();
+console.table(rafael);
 console.log(Person.PUBLIC_STATIC_FIELD); // 420
 
 //========================================================================================================
